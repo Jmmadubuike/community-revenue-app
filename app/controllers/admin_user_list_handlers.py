@@ -22,9 +22,11 @@ async def create_user(req: Request, res: Response):
     check_user = await Users.query.filter_qs(email=validated_data["email"]).exists()
     if check_user:
         return res.status(400).json({"error": "User with this email already exists"})
-    user = await Users.create(**validated_data,password=generate_user_password())
+    password = generate_user_password()
+    user = await Users.create(**validated_data,password=password)
     if user:
         req.state.email = user.email
+        req.state.password = password
     return res.json({"user": user, "status": "success"}, status_code=201)
 
 @users_router.get("/all")
