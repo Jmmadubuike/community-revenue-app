@@ -1,9 +1,10 @@
 from nexios.http import Request,Response
 from nexios.routing import Router
-from schemas.auth_schema import AdminLoginSchema
+from schemas.auth_schema import AdminLoginSchema,UserLoginSchema
 from nexios.validator import ValidationError
-from services.auth import authenticate_admin
+from services.auth import authenticate_admin,authenticate_user
 from models.admins import Admins
+from models.users import Users
 from datetime import datetime,timedelta
 from services.auth import create_jwt_token
 auth_router = Router("/api/auth")
@@ -36,5 +37,30 @@ async def handler_admin_login(req :Request,res :Response):
     token = create_jwt_token(auth_payload)
     return res.json({"token":token,"status":"success"})
     
+
+
+@auth_router.post("/user-login")
+async def handle_user_login(req :Request,res :Response):
+    request_data = await req.json
+    auth_schema = UserLoginSchema()
+    try:
+        validated_data = auth_schema.load(request_data)
+
+    except ValidationError as err:
+        return res.json(err.messages,status_code=422)
+    
+    user = await authenticate_user(**validated_data)
+    if not user:
+        return res.json({"Auth":"Invalid credentials"},status_code=400)
+    
+    auth_payload = {
+        "id" : str(user.id),
+        "exp" : datetime.utcnow() + timedelta(days=30),
+        "email" : user.email
+
+    }
+    token = create_jwt_token(auth_payload)
+    return res.json({"token":token,"status":"success"})
+
 
 

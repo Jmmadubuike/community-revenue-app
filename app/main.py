@@ -19,7 +19,6 @@ app = get_application(
 )
 
 async def authenticator_func(**payload):
-    print("Hello world")
     id = payload['id']
     admin_user = await Admins.query.filter_qs().get_or_none(id = id)
     if not admin_user:

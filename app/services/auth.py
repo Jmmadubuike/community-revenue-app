@@ -3,6 +3,7 @@ from models.admins import Admins
 from nexios.config import get_config
 from nexios.auth.backends.jwt import create_jwt,decode_jwt
 from nexios.auth.base import BaseUser
+from models.users import Users
 
 class User(BaseUser):
     def __init__(self,id = None, display_name = None,user_obj = None,admin = None):
@@ -44,7 +45,15 @@ async def authenticate_admin(email,password):
         return admin_user
     return None
     
-
+async def authenticate_user(email,password):
+    user :Users = await Users.get_or_none(email = email)
+    if not user:
+        return None
+    
+    if password != user.password:
+        return None
+    
+    return user
 def create_jwt_token(payload):
     app_config = get_config()
     token = create_jwt(payload,secret=app_config.secret_key)
