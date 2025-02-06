@@ -12,13 +12,42 @@ admin_payment_router.add_middleware(admin_required)
 async def get_all_payments(req :Request, res :Response):
     limit = req.query_params.get("limit",15)
     offset = req.query_params.get("offset",0)
-    
-    base_query :Payment = await Payment.query.all_data()
-    print(base_query)
+    year,month = req.query_params.get("year"),req.query_params.get("month")
+    base_query :Payment =  Payment.query.all()
+    if year:
+        base_query = base_query.filter(created_at__year = int(year))
+        
+    if month:
+        base_query = base_query.filter(created_at__month = int(month))
     list_of_payments = []
-    for pays in base_query:
+    for pays in  await base_query:
         list_of_payments.append(await pays.to_dict())
         
     return res.json(list_of_payments)
     
 
+@admin_payment_router.get("/user/{user_id}")
+async def get_user_payments(req: Request, res: Response):
+    limit = int(req.query_params.get("limit", 15))
+    offset = int(req.query_params.get("offset", 0))
+    user_id = req.path_params.user_id
+    payments = await Payment.query.filter(user_id=user_id).limit(limit).offset(offset)
+    
+    grouped_payments = {}
+    
+    for payment in payments:
+        month = payment.get_date_for.strftime("%Y-%m")
+        if month not in grouped_payments:
+            grouped_payments[month] = []
+        grouped_payments[month].append({
+            "amount": payment.amount,
+            "proof": payment.proof,
+            "status": payment.status,
+            "date_for": payment.date_for,
+            "transaction_id": payment.transaction_id,
+            "notes": payment.notes,
+            "state": payment.status or "pending",
+            "is_pending":True if payment.status != "approved"else False
+        })
+    
+    return res.json(grouped_payments, status_code=200)
