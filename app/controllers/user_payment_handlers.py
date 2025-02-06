@@ -15,7 +15,7 @@ async def get_user_payments(req: Request, res: Response):
     grouped_payments = {}
     
     for payment in payments:
-        month = payment.created_at.strftime("%Y-%m")
+        month = payment.get_date_for.strftime("%Y-%m")
         if month not in grouped_payments:
             grouped_payments[month] = []
         grouped_payments[month].append({
@@ -24,7 +24,9 @@ async def get_user_payments(req: Request, res: Response):
             "status": payment.status,
             "date_for": payment.date_for,
             "transaction_id": payment.transaction_id,
-            "notes": payment.notes
+            "notes": payment.notes,
+            "state": payment.status or "pending",
+            "is_pending":True if payment.status != "approved"else False
         })
     
     return res.json(grouped_payments, status_code=200)

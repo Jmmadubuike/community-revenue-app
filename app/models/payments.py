@@ -13,3 +13,25 @@ class Payment(Model):
 
     class Meta:
         table = "payments"
+        
+    @property
+    def get_date_for(self):
+        return self.date_for or self.created_at
+    async def to_dict(self):
+        user = await self.user
+        data = {
+            "id": self.id,  
+            "amount": str(self.amount),  
+            "proof": self.proof,
+            "status": self.status,
+            "date_for": self.date_for,
+            "user":  user.to_dict(),  
+            "transaction_id": self.transaction_id,
+            "notes": self.notes,
+            "date_created":self.created_at,
+            "date_for":self.get_date_for.strftime("%Y-%m")
+        }
+
+       
+
+        return data
