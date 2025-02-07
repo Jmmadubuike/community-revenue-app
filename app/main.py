@@ -18,6 +18,8 @@ from controllers.admin_user_list_handlers import users_router
 from controllers.media_handler import media_upload_router
 from controllers.user_payment_handlers import user_payment_router
 from controllers.admin_payments import admin_payment_router
+from controllers.admin_due_controllers import dues_router
+from controllers.user_due_controller import user_due_router
 app = get_application(
     config=nexios_config
 )
@@ -51,6 +53,10 @@ app.mount_router(users_router)
 app.mount_router(media_upload_router)
 app.mount_router(user_payment_router)
 app.mount_router(admin_payment_router)
+app.mount_router(dues_router)
+app.mount_router(user_due_router)
+
+
 
 
 
