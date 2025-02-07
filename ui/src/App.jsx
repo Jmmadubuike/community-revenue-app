@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from 'react'
 import './App.css'
+// Supports weights 100-900
+import '@fontsource-variable/montserrat';
+import {Toaster} from "react-hot-toast"
+
+const AdminLoginPage  = React.lazy(() => import("./pages/admin/auth/login"))
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <p className='text-blue-600'>Hell</p>
-       </div>
-    </>
+    <Router>
+     <Toaster />
+
+      <Routes>
+        
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+
+
+      </Routes>
+    </Router>
   )
 }
 
