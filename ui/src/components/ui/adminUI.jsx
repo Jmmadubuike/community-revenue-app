@@ -16,7 +16,7 @@ const AdminUI = ({ children }) => {
   return (
     <div className="flex min-h-screen h-full bg-gray-100">
       {/* Sidebar */}
-      <aside className="sticky top-0 w-60 bg-black text-slate-300 flex flex-col items-center p-4">
+      <aside className="sticky top-0 w-60 bg-black text-slate-300 md:flex flex-col items-center p-4 hidden">
         <Logo />
         <nav className="mt-6 w-full flex flex-col gap-2">
           {menuItems.map(({ icon: Icon, label }, index) => (

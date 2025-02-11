@@ -23,7 +23,7 @@ async def create_user(req: Request, res: Response):
     if check_user:
         return res.status(400).json({"error": "User with this email already exists"})
     password = generate_user_password()
-    user = await Users.create(**validated_data,password=password)
+    user = await Users.create(**validated_data,password=password,is_activate = True)
     if user:
         req.state.email = user.email
         req.state.password = password

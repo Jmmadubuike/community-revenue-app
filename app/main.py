@@ -21,6 +21,7 @@ from controllers.admin_payments import admin_payment_router
 from controllers.admin_due_controllers import dues_router
 from controllers.user_due_controller import user_due_router
 from controllers.user_creation_controllers import users_router as user_creation_router
+from controllers.admin_stats_controller import stats_routes
 app = get_application(
     config=nexios_config
 )
@@ -57,6 +58,8 @@ app.mount_router(admin_payment_router)
 app.mount_router(dues_router)
 app.mount_router(user_due_router)
 app.mount_router(user_creation_router)
+app.mount_router(stats_routes)
+
 
 
 

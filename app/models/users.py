@@ -10,6 +10,7 @@ class Users(BaseModel,BaseUserModel):
     quarter = fields.CharField(max_length=50)
     age_grade = fields.CharField(max_length=50)
     kindred = fields.CharField(max_length=50)
+    is_active = fields.BooleanField(default = False)
 
     def __str__(self):
         return self.username

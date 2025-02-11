@@ -13,6 +13,7 @@
     "@fontsource-variable/montserrat": "^5.1.1",
     "@tailwindcss/vite": "^4.0.4",
     "@zayne-labs/callapi": "^1.4.2",
+    "antd": "^5.24.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.1",

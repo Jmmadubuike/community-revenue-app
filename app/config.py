@@ -16,7 +16,8 @@ db_config = {
 nexios_config = MakeConfig({
     "port" : 8000,
     "cors":{
-        "allow_origins" : ["*"]
+        "allow_origins" : ["*"],
+        "allow_headers":["*"]
     },
     "debug" : True,
     "secret_key" :"ogidistyle"
