@@ -3,9 +3,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Logo from "../../../components/common/logo";
 import {toast} from "react-hot-toast"
 import { callApi } from "../../../api";
+import {useNavigate} from "react-router-dom"
 function AdminLoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,6 +29,10 @@ function AdminLoginPage() {
         toast.dismiss()
         toast.success("Welcome .. ")
         localStorage.setItem("admin_token",data.data.token)
+        localStorage.setItem("admin_username",data.data.username)
+        navigate("/admin/dashboard")
+
+
 
       },
       onError:error =>{

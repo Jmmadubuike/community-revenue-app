@@ -9,6 +9,7 @@ class UserSchema(Schema):
     quarter = fields.Str(required=True, validate=validate.Length(max=50))
     age_grade = fields.Str(required=True, validate=validate.Length(max=50))
     kindred = fields.Str(required=True, validate=validate.Length(max=50))
+    
 
     class Meta:
         unknown = EXCLUDE

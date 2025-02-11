@@ -13,7 +13,7 @@ auth_router = Router("/api/auth")
 @auth_router.post("/admin-login")
 async def handler_admin_login(req :Request,res :Response):
     request_body = await req.json
-    print(request_body)
+    print(req.method)
     schema = AdminLoginSchema()
 
     try:
@@ -35,7 +35,7 @@ async def handler_admin_login(req :Request,res :Response):
 
     }
     token = create_jwt_token(auth_payload)
-    return res.json({"token":token,"status":"success"})
+    return res.json({"token":token,"status":"success","username":admin_user.name})
     
 
 
