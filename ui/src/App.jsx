@@ -6,6 +6,7 @@ import {Toaster} from "react-hot-toast"
 import NewUserForm from './pages/users/auth/createAccount';
 import AdminDashboardHome from './pages/admin/dashboard/home';
 import "antd/dist/reset.css"; 
+import '@fontsource-variable/inter';
 const AdminLoginPage  = React.lazy(() => import("./pages/admin/auth/login"))
 
 function App() {

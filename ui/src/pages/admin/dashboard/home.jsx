@@ -3,6 +3,7 @@ import AdminUI from '../../../components/ui/adminUI';
 import {callAdminApi} from "../../../api"
 import {Spin,Card}  from "antd"
 import { FaArrowDown,FaArrowUp } from 'react-icons/fa';
+import AdminPaymentElement from '../../../components/elements/adminpaymentElement';
 
 const AdminDashboardHome = () => {
     const [stats,setStats] = useState()
@@ -52,7 +53,7 @@ const AdminDashboardHome = () => {
 
                 <Card className="shadow-md rounded-lg  border border-gray-200 bg-white w-80 h-40">
                 <div className='flex justify-between px-2 border-b border-gray-400'>
-                    <p className='text-sm font- text-gray-700'>Total Users</p>
+                    <p className='text-sm font- text-gray-700'>Financial Summary</p>
                     <p className='text-sm font-extralight text-gray-700 bg-gray-200 px-2 rounded-md'>Today</p>
                 </div>
 
@@ -74,8 +75,28 @@ const AdminDashboardHome = () => {
                 </div>
                 <p className='text-sm text-gray-400'>Compared to NGN{stats?.users?.last_month} last month</p>
                 </Card>
+
+                <Card className="shadow-md rounded-lg  border border-gray-200 bg-white w-80 h-40">
+                <div className='flex justify-between px-2 border-b border-gray-400'>
+                    <p className='text-sm font- text-gray-700'>Upcoming Event</p>
+                    <p className='text-sm font-extralight text-gray-700 bg-gray-200 px-2 rounded-md'>Today</p>
+                </div>
+
+               {stats?.event ? 
+               <div>
+                
+               </div>:
+               <div>
+                </div>}
+                </Card>
                 </div> 
+
+                <div className='mt-8 max-w-full overflow-x-hidden'>
+            <h1 className='2xl font-semibold my-2'>Financial Transactions.</h1>
+            <AdminPaymentElement limit={6} offset={0}/>
             </div>
+            </div>
+            
         </AdminUI>
     );
 };

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.1.1",
     "@fontsource-variable/montserrat": "^5.1.1",
     "@tailwindcss/vite": "^4.0.4",
     "@zayne-labs/callapi": "^1.4.2",

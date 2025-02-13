@@ -10,17 +10,17 @@ admin_payment_router.add_middleware(admin_required)
 
 @admin_payment_router.get("")
 async def get_all_payments(req :Request, res :Response):
-    limit = req.query_params.get("limit",15)
-    offset = req.query_params.get("offset",0)
+    limit = int(req.query_params.get("limit",15))
+    offset = int(req.query_params.get("offset",0))
     year,month = req.query_params.get("year"),req.query_params.get("month")
-    base_query :Payment =  Payment.query.all()
+    base_query :Payment =  Payment.query
     if year:
         base_query = base_query.filter(created_at__year = int(year))
         
     if month:
         base_query = base_query.filter(created_at__month = int(month))
     list_of_payments = []
-    for pays in  await base_query:
+    for pays in  await base_query.all_data(limit = limit,offset = offset):
         list_of_payments.append(await pays.to_dict())
         
     return res.json(list_of_payments)
