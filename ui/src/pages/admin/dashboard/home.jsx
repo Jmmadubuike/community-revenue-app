@@ -4,6 +4,7 @@ import {callAdminApi} from "../../../api"
 import {Spin,Card}  from "antd"
 import { FaArrowDown,FaArrowUp } from 'react-icons/fa';
 import AdminPaymentElement from '../../../components/elements/adminpaymentElement';
+import AdminRegisteredUserElement from '../../../components/elements/adminRegisteredUserElement';
 
 const AdminDashboardHome = () => {
     const [stats,setStats] = useState()
@@ -94,6 +95,11 @@ const AdminDashboardHome = () => {
                 <div className='mt-8 max-w-full overflow-x-hidden'>
             <h1 className='2xl font-semibold my-2'>Financial Transactions.</h1>
             <AdminPaymentElement limit={6} offset={0}/>
+            </div>
+
+            <div className='mt-8 max-w-full overflow-x-hidden'>
+            <h1 className='2xl font-semibold my-2'>Registered User</h1>
+            <AdminRegisteredUserElement limit={6} offset={0}/>
             </div>
             </div>
             

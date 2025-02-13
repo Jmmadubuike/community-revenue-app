@@ -48,7 +48,7 @@ const AdminPaymentElement = ({ limit, offset }) => {
         },
        
         {
-            title: `Amount${"₦"}`,
+            title: `Amount(${"₦"})`,
             dataIndex: "amount",
             key: "amount",
             render: (amount) => `$${parseFloat(amount).toFixed(2)}`,

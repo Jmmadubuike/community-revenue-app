@@ -31,7 +31,8 @@ class Users(BaseModel,BaseUserModel):
             'country_of_residence': self.country_of_residence,
             'quarter': self.quarter,
             'age_grade': self.age_grade,
-            'kindred': self.kindred
+            'kindred': self.kindred,
+            "approved":self.is_active
         }
     class Meta:
         order_by = ('username',)
