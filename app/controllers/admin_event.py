@@ -12,7 +12,7 @@ events_router.add_middleware(admin_required)
 
 @events_router.post("")
 async def create_event(req: Request, res: Response):
-    request_body = await req.json()
+    request_body = await req.json
     schema = EventSchema()
 
     try:
@@ -39,7 +39,7 @@ async def get_event(req: Request, res: Response):
 @events_router.put("/{event_id}/update")
 async def update_event(req: Request, res: Response):
     event_id = req.path_params.event_id
-    request_body = await req.json()
+    request_body = await req.json
     schema = EventUpdateSchema()
 
     try:

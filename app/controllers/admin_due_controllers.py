@@ -24,7 +24,7 @@ async def create_due(req: Request, res: Response):
 
 @dues_router.get("/all")
 async def list_dues(req: Request, res: Response):
-    dues = await Due.all().values()
+    dues = await Due.all().order_by("-created_at").values()
     return res.json({"data": dues, "status": "success"})
 
 @dues_router.get("/{due_id}")

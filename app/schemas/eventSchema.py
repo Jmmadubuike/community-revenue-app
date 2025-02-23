@@ -5,6 +5,7 @@ class EventSchema(Schema):
     venue = fields.Str(required=True)
     description = fields.Str(required=True)
     banner_url = fields.Str(allow_none=True)
+    date = fields.DateTime(required=True)
 
     class Meta:
         unknown = EXCLUDE

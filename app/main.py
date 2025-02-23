@@ -23,6 +23,7 @@ from controllers.user_due_controller import user_due_router
 from controllers.user_creation_controllers import users_router as user_creation_router
 from controllers.admin_stats_controller import stats_routes
 from controllers.admin_setting import admin_setting_router
+from controllers.admin_event import events_router
 app = get_application(
     config=nexios_config
 )
@@ -61,6 +62,7 @@ app.mount_router(user_due_router)
 app.mount_router(user_creation_router)
 app.mount_router(stats_routes)
 app.mount_router(admin_setting_router)
+app.mount_router(events_router)
 
 
 

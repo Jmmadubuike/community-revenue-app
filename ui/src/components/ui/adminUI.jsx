@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const menuItems = [
   { icon: HiSquares2X2, label: "Dashboard" , url:"/admin/dashboard"},
   { icon: FaExchangeAlt, label: "Financial Management",url:"/admin/dashboard/financial-management" },
-  { icon: MdGpsFixed, label: "Event/Dues" },
+  { icon: MdGpsFixed, label: "Event/Dues", url:"/admin/dashboard/event-dues" },
   { icon: FaUserFriends, label: "User Management" },
 ];
 

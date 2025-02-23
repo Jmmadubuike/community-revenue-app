@@ -9,6 +9,7 @@ import "antd/dist/reset.css";
 import '@fontsource-variable/inter';
 const AdminLoginPage  = React.lazy(() => import("./pages/admin/auth/login"))
 const FinancialManagement = React.lazy(() => import("./pages/admin/dashboard/financial_management"))
+const EventDues = React.lazy(() => import("./pages/admin/dashboard/event-dues"))
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminDashboardHome />} />
         <Route path="/admin/dashboard" element={<AdminDashboardHome />} />
         <Route path="/admin/dashboard/financial-management" element={<FinancialManagement />} />
+        <Route path="/admin/dashboard/event-dues" element={<EventDues />} />
 
 
 
