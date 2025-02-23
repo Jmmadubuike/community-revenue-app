@@ -8,6 +8,7 @@ import AdminDashboardHome from './pages/admin/dashboard/home';
 import "antd/dist/reset.css"; 
 import '@fontsource-variable/inter';
 const AdminLoginPage  = React.lazy(() => import("./pages/admin/auth/login"))
+const FinancialManagement = React.lazy(() => import("./pages/admin/dashboard/financial_management"))
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
         <Route path="/new-user" element={<NewUserForm />} />
 
         <Route path="/admin/dashboard" element={<AdminDashboardHome />} />
+        <Route path="/admin/dashboard" element={<AdminDashboardHome />} />
+        <Route path="/admin/dashboard/financial-management" element={<FinancialManagement />} />
 
 
 

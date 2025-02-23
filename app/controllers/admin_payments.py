@@ -51,3 +51,15 @@ async def get_user_payments(req: Request, res: Response):
         })
     
     return res.json(grouped_payments, status_code=200)
+
+
+@admin_payment_router.post("/action/{id}")
+async def approv_payments(req: Request, res: Response):
+    obj_id = req.path_params.id
+    obj = await Payment.get_or_none(id = obj_id)
+    data = await req.json
+    if not obj:
+        return res.json({"error":"not found"},status_code=404)
+    obj.status = data.get("state")
+    obj.save()
+    return res.json({"success":"True"})
