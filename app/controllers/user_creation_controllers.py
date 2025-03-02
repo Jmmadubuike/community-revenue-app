@@ -6,6 +6,13 @@ from nexios.validator import ValidationError
 from middlewares.admin_required import admin_required
 from services.user_services import generate_user_password, send_user_email
 from nexios.hooks import after_request
+import random
+
+def generate_random_10_digit():
+    return random.randint(10**9, 10**10 - 1)  # Ensures exactly 10 digits
+
+
+
 users_router = Router("/api/users")
 
 @users_router.post("/new")
@@ -18,11 +25,9 @@ async def create_user(req: Request, res: Response):
         validated_data = schema.load(request_body)
     except ValidationError as err:
         return res.json(err.messages, status_code=422)
-    check_user = await Users.query.filter_qs(email=validated_data["email"]).exists()
-    if check_user:
-        return res.status(400).json({"error": "User with this email already exists"})
+    
     password = generate_user_password()
-    user = await Users.create(**validated_data,password=password)
+    user = await Users.create(**validated_data,password=password, idn = generate_random_10_digit())
     if user:
         req.state.email = user.email
         req.state.password = password

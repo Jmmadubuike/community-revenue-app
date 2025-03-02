@@ -10,6 +10,7 @@ class Payment(Model):
     user = fields.ForeignKeyField("models.Users",related_name="user_payments",on_delete=fields.CASCADE)
     transaction_id = fields.CharField(max_length = 120)
     notes = fields.CharField(null = True,max_length = 120)
+    name = fields.CharField(null = True, max_length = 200)
 
     class Meta:
         table = "payments"

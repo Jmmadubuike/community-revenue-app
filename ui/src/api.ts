@@ -22,3 +22,14 @@ export const callAdminApi = createFetchClient({
 
 });
 
+
+export const callUserApi = createFetchClient({
+    timeout: 315000,
+    baseURL: `${baseHttpUrl}/api/`,
+    headers:{
+        "Authorization":`Bearer ${localStorage.getItem("user_token")}`
+    }
+    
+    
+
+});

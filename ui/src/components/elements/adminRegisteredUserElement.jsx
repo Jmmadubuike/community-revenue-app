@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Table, Tag, Button } from "antd";
+import { Table, Tag, Button, Modal, Input, Form } from "antd";
 import { callAdminApi } from "../../api";
+import { SearchOutlined } from "@ant-design/icons";
 
 const AdminRegisteredUserElement = ({ limit, offset }) => {
     const [_limit, setLimit] = useState(limit);
     const [_offset, setOffset] = useState(offset);
     const [userList, setUserList] = useState([]);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [form] = Form.useForm();
+    const [search, setSearch] = useState("");
 
     const fetchUsers = () => {
         callAdminApi("/admin/users/all", {
@@ -18,6 +23,35 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
 
     useEffect(fetchUsers, []);
 
+    const showDetails = (record) => {
+        setSelectedUser(record);
+        form.setFieldsValue(record);
+        setIsModalVisible(true);
+    };
+
+    const updateUser = () => {
+        console.log(form.getFieldsValue())
+        callAdminApi(`/admin/users/${selectedUser.id}/update`, {
+            method: "PUT",
+            body: JSON.stringify(form.getFieldsValue()),
+            onSuccess: () => {
+                setIsModalVisible(false);
+                 fetchUsers();
+            },
+        });
+    };
+
+    const activateUser = () => {
+        console.log(form.getFieldsValue())
+        callAdminApi(`/admin/users/${selectedUser.id}/update`, {
+            method: "PUT",
+            body: JSON.stringify({"is_active" : true}),
+            onSuccess: () => {
+                setIsModalVisible(false);
+                 fetchUsers();
+            },
+        });
+    }; 
     const columns = [
         {
             title: "Full Name",
@@ -51,11 +85,11 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
         },
         {
             title: "Status",
-            dataIndex: "approved",
-            key: "approved",
-            render: (approved) => (
-                <Tag color={approved ? "green" : "red"}>
-                    {approved ? "Approved" : "Pending"}
+            dataIndex: "is_active",
+            key: "is_active",
+            render: (is_active) => (
+                <Tag color={is_active ? "green" : "red"}>
+                    {is_active ? "Approved" : "Pending"}
                 </Tag>
             ),
         },
@@ -68,65 +102,74 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
         },
     ];
 
-    const showDetails = (record) => {
-        alert(`Showing details for User: ${record.first_name} ${record.last_name}`);
-    };
-
     return (
         <div className="p-4 bg-white shadow-md rounded-md max-w-full">
+            <Input
+                placeholder="Search by IDN or Username"
+                prefix={<SearchOutlined />}
+                onChange={(e) => setSearch(e.target.value)}
+                className="mb-4"
+            />
+            <Table 
+                dataSource={userList.filter(user => 
+                    user.idn.includes(search) || 
+                    `${user.first_name} ${user.last_name}`.toLowerCase().includes(search.toLowerCase())
+                )} 
+                columns={columns} 
+                rowKey="id" 
+                pagination={{ pageSize: _limit }} 
+                scroll={{ x: 800 }}
+            />
             
-            <div className="overflow-x-auto max-w-full hidden md:flex">
-                <Table 
-                    dataSource={userList} 
-                    columns={columns} 
-                    rowKey="id" 
-                    pagination={{ pageSize: _limit }} 
-                    scroll={{ x: 800 }}
-                    className="w-full flex flex-col"
-                />
-            </div>
+            <Modal
+                title="User Details"
+                visible={isModalVisible}
+                onOk={updateUser}
+                footer={null}
+                onCancel={() => setIsModalVisible(false)}
+            >
+                <Form form={form} layout="vertical">
+                    <Form.Item name="first_name" label="First Name">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="last_name" label="Last Name">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="email" label="Email">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="date_of_birth" label="Date of Birth">
+                        <Input type="date" />
+                    </Form.Item>
+                    <Form.Item name="country_of_residence" label="Country of Residence">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="quarter" label="Quarter">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="age_grade" label="Age Grade">
+                        <Input />
+                    </Form.Item>
 
-            {/* Mobile View */}
-            <div className="block lg:hidden space-y-4">
-                {userList.map((user) => (
-                    <div key={user.id} className="p-4 border rounded-lg shadow-md bg-gray-50">
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Full Name:</span> {user.first_name} {user.last_name}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Email:</span> {user.email}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Date of Birth:</span> {new Date(user.date_of_birth).toLocaleDateString()}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Country of Residence:</span> {user.country_of_residence}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Quarter:</span> {user.quarter}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Age Grade:</span> {user.age_grade}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Kindred:</span> {user.kindred}
-                        </p>
-                        <p className="text-sm text-gray-700">
-                            <span className="font-semibold">Status:</span>
-                            <Tag color={user.approved ? "green" : "red"} className="ml-2">
-                                {user.approved ? "Approved" : "Pending"}
-                            </Tag>
-                        </p>
-                        <Button 
-                            type="primary" 
-                            className="mt-2 bg-blue-500 w-full" 
-                            onClick={() => showDetails(user)}
-                        >
-                            Show Details
-                        </Button>
-                    </div>
-                ))}
-            </div>
+                    <Form.Item name="level" label="Level">
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item name="kindred" label="Kindred">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="idn" label="IDN">
+                        <Input disabled />
+                    </Form.Item>
+                </Form>
+                <div className="flex gap-2">
+                    <Button onClick={updateUser}>Update</Button>
+                    <Button onClick={activateUser}>Activate</Button>
+
+
+
+                </div>
+            </Modal>
         </div>
     );
 };

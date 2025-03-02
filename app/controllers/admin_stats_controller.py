@@ -45,7 +45,7 @@ async def get_payment_stats():
     first_day_of_last_month = datetime(first_day_of_last_month.year, first_day_of_last_month.month, 1)
 
     # Fetch payment amounts properly
-    total_payment = sum(await Payment.all().values_list("amount", flat=True))
+    total_payment = sum(await Payment.filter(status = "approved").values_list("amount", flat=True))
     last_month_payment = sum(await Payment.filter(
         created_at__gte=first_day_of_last_month,
         created_at__lt=first_day_of_this_month

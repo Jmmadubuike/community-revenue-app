@@ -4,6 +4,7 @@ from nexios.config import get_config
 from nexios.auth.backends.jwt import create_jwt,decode_jwt
 from nexios.auth.base import BaseUser
 from models.users import Users
+from tortoise.expressions import Q
 
 class User(BaseUser):
     def __init__(self,id = None, display_name = None,user_obj = None,admin = None):
@@ -45,8 +46,8 @@ async def authenticate_admin(email,password):
         return admin_user
     return None
     
-async def authenticate_user(email,password):
-    user :Users = await Users.get_or_none(email = email)
+async def authenticate_user(email,password) -> User | None:
+    user :Users = await Users.filter(Q(email = email) | Q(idn = email))
     if not user:
         return None
     

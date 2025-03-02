@@ -176,11 +176,24 @@ const UpcomingPage = () => {
               eventList?.map((data, index) => {
                 return (
 
-                  <div className=" bg-white  border-b border-neutral-400 md:p-6 flex">
-                      <img src="https://www.pexels.com/photo/green-grass-near-trees-1770809/" className="max-w-32" />
-                      <h1> <span className="text-2xl font-bold">{data.title}</span> <span>{formatDate(data.date)} . <span>{data.venue}</span></span></h1>
-              
-                 
+                  <div className=" border-b border-neutral-400 md:p-6 p-2">
+                    <div className="bg-white  flex items-center space-x-4">
+                  <img 
+                      src="https://www.pexels.com/photo/green-grass-near-trees-1770809/" 
+                      className="w-12 h-12 object-cover rounded-full" 
+                      alt="Event" 
+                  />
+                  <div>
+                  <div className="flex items-center space-x-2">
+                      <h1 className="text-xl font-bold">{data.title}</h1>
+                      <p className="text-neutral-400 text-lg">•</p>
+                      <p className="text-neutral-600 text-lg">
+                          {formatDate(data.date)} •  <span>{data.venue}</span>
+                      </p>
+                  </div>
+              <small>{data.description}</small>
+                </div>
+              </div>
                   </div>
                 )
               })

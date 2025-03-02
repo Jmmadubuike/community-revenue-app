@@ -61,5 +61,6 @@ async def approv_payments(req: Request, res: Response):
     if not obj:
         return res.json({"error":"not found"},status_code=404)
     obj.status = data.get("state")
-    obj.save()
+    
+    await obj.save()
     return res.json({"success":"True"})

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table, Tag, Button, Modal } from "antd";
-import { callAdminApi } from "../../api";
+import { callUserApi } from "../../api";
 import toast from "react-hot-toast";
 
-const AdminPaymentElement = ({ limit, offset }) => {
+const UserPaymentElement = ({ limit, offset }) => {
     const [_limit, setLimit] = useState(limit);
     const [_offset, setOffset] = useState(offset);
     const [paymentList, setPayment] = useState([]);
@@ -15,7 +15,7 @@ const AdminPaymentElement = ({ limit, offset }) => {
     }, []);
 
     const fetchPayments = () => {
-        callAdminApi("/admin/payments", {
+        callUserApi("user/payments", {
             query: { offset: _offset, limit: _limit },
             onSuccess: (data) => setPayment(data.data),
         });
@@ -37,33 +37,7 @@ const AdminPaymentElement = ({ limit, offset }) => {
         setSelectedPayment(null);
     };
 
-    const handleAction = (payment, state) => {
-        toast.loading("Processing...");
-        callAdminApi(`/admin/payments/action/${payment.id}`, {
-            method: "POST",
-            body: JSON.stringify({ "state" :state }),
-            onSuccess: () => {
-                toast.dismiss();
-                toast.success("Status Updated");
-
-                // Update paymentList state
-                setPayment((prevPayments) =>
-                    prevPayments.map((p) =>
-                        p.id === payment.id ? { ...p, status: state } : p
-                    )
-                );
-
-                // Update modal state
-                setSelectedPayment((prev) =>
-                    prev ? { ...prev, status: state } : null
-                );
-            },
-            onError: () => {
-                toast.dismiss();
-                toast.error("Failed to update status");
-            },
-        });
-    };
+    
 
     const columns = [
         {
@@ -105,14 +79,7 @@ const AdminPaymentElement = ({ limit, offset }) => {
                     {status.toUpperCase()}
                 </Tag>
             ),
-        },
-        {
-            title: "Actions",
-            key: "actions",
-            render: (_, record) => (
-                <Button onClick={() => showDetails(record)}>Show Details</Button>
-            ),
-        },
+        }
     ];
 
     return (
@@ -146,21 +113,7 @@ const AdminPaymentElement = ({ limit, offset }) => {
                             <p>{new Date(selectedPayment.date_created).toLocaleString()}</p>
                         </div>
 
-                        {/* Action buttons */}
-                        <div className="flex justify-evenly gap-8">
-                            <button
-                                className="px-16 py-4 bg-red-500 text-white cursor-pointer"
-                                onClick={() => handleAction(selectedPayment, "failed")}
-                            >
-                                Reject
-                            </button>
-                            <button
-                                className="px-16 py-4 bg-green-500 text-white cursor-pointer"
-                                onClick={() => handleAction(selectedPayment, "approved")}
-                            >
-                                Approve
-                            </button>
-                        </div>
+                       
                     </div>
                 ) : (
                     <p>No payment selected.</p>
@@ -210,4 +163,4 @@ const AdminPaymentElement = ({ limit, offset }) => {
     );
 };
 
-export default AdminPaymentElement;
+export default UserPaymentElement;

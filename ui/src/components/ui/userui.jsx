@@ -2,17 +2,16 @@ import React, { use } from "react";
 import Logo from "../common/logo";
 import { HiSquares2X2 } from "react-icons/hi2";
 import { MdGpsFixed } from "react-icons/md";
-import { FaExchangeAlt, FaUserFriends, FaSignOutAlt } from "react-icons/fa";
+import { FaExchangeAlt, FaUserFriends, FaSignOutAlt,FaCogs } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const menuItems = [
-  { icon: HiSquares2X2, label: "Dashboard" , url:"/admin/dashboard"},
-  { icon: FaExchangeAlt, label: "Financial Management",url:"/admin/dashboard/financial-management" },
-  { icon: MdGpsFixed, label: "Event/Dues", url:"/admin/dashboard/event-dues" },
-  { icon: FaUserFriends, label: "User Management" , url : "/admin/dashboard/users"},
+  { icon: HiSquares2X2, label: "Dashboard" , url:"/user/dashboard"},
+  { icon: FaExchangeAlt, label: "Payment Transaction",url:"/user/dashboard/payments" },
+  // { icon: MdGpsFixed, label: "Notification", url:"/admin/dashboard/event-dues" },
 ];
 
-const AdminUI = ({ children }) => {
+const UserUI = ({ children }) => {
   const navigate = useNavigate();
   return (
     <div className="flex bg-gray-100 h-screen w-full">
@@ -40,7 +39,7 @@ const AdminUI = ({ children }) => {
       {/* Main Content */}
       <main className="md:ml-60 flex-1 overflow-auto h-screen">
         <div className="sticky top-0 flex items-center gap-2 border-b w-full z-50 border-slate-200 p-5 bg-white shadow">
-          <p className="text-lg font-extrabold">{localStorage.getItem("admin_username")}</p>
+          <p className="text-lg font-extrabold">{localStorage.getItem("user_username")}</p>
           <p className="font-semibold">{">>"}</p>
         </div>
         <div className="w-full min-h-[80vh] p-4">{children}</div>
@@ -49,4 +48,4 @@ const AdminUI = ({ children }) => {
   );
 };
 
-export default AdminUI;
+export default UserUI;

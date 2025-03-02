@@ -31,7 +31,7 @@ async def create_user(req: Request, res: Response):
 
 @users_router.get("/all")
 async def list_users(req: Request, res: Response):
-    users = await Users.all().values()
+    users = await Users.all().order_by("-created_at").values()
     return res.json({"data": users, "status": "success"})
 
 @users_router.get("/{user_id}")
@@ -53,6 +53,7 @@ async def update_user(req: Request, res: Response):
     except ValidationError as err:
         return res.json(err.messages, status_code=422)
 
+    print(validated_data)
     user = await Users.get_or_none(id=user_id)
     if not user:
         return res.status(404).json({"error": "User not found"})

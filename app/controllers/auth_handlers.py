@@ -60,7 +60,25 @@ async def handle_user_login(req :Request,res :Response):
 
     }
     token = create_jwt_token(auth_payload)
-    return res.json({"token":token,"status":"success"})
+    return res.json({"token":token,"status":"success","username":user.username})
 
 
+
+
+
+
+@auth_router.post("/user-login/idn")
+async def handle_user_login(req :Request,res :Response):
+    data = await req.json
+    user = await Users.get_or_none(idn = data.get("idn", None))
+    if not user:
+        return res.json({"auth":"failed"}, status_code=400)
+    auth_payload = {
+        "id" : str(user.id),
+        "exp" : datetime.utcnow() + timedelta(days=30),
+        "email" : user.email
+
+    }
+    token = create_jwt_token(auth_payload)
+    return res.json({"token":token,"status":"success","username":user.username})
 

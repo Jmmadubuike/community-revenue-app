@@ -2,19 +2,24 @@ import { useState } from "react";
 import Logo from "../../../components/common/logo"
 import {callApi} from "../../../api"
 import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom"
 const NewUserForm = () => {
     const [formData, setFormData] = useState({
-        email: null,
-        first_name: null,
-        last_name: null,
-        date_of_birth: null,
-        country_of_residence: null,
-        quarter: null,
-        age_grade: null,
-        kindred: null,
-        password: null,
+        email: "",
+        first_name: "",
+        last_name: "",
+        password: "",
+        date_of_birth: "",
+        country_of_residence: "",
+        quarter: "",
+        age_grade: "",
+        kindred: "",
+        gender: "unknown",
+        marital_status: "single",
+        level: "level_1",
+        phone: ""
     });
-
+    const navigate = useNavigate()
     const [step, setStep] = useState(1); // Track current step
 
     const handleChange = (e) => {
@@ -22,27 +27,26 @@ const NewUserForm = () => {
     };
 
     const nextStep = () => {
-        if (step < 2) {
-            if (!formData.email || !formData.first_name || !formData.last_name || !formData.date_of_birth){
-                toast.error("Fill all fields")
-                return 
-            }
-            setStep(step + 1)
-        };
+        if (step === 1 && (!formData.first_name || !formData.last_name || !formData.date_of_birth )) {
+            toast.error("Fill all required fields");
+            return;
+        }
+        if (step === 2 && (!formData.country_of_residence || !formData.quarter || !formData.age_grade || !formData.kindred)) {
+            toast.error("Fill all required fields");
+            return;
+        }
+        setStep(step + 1);
     };
 
     const prevStep = () => {
-        if (step > 1) {
-            setStep(step - 1)
-        };
+        if (step > 1) setStep(step - 1);
     };
-
     const handleSubmit = (e) => {
 
         e.preventDefault();
         if (!formData.country_of_residence || !formData.quarter || !formData.age_grade || !formData.kindred){
             toast.error(
-                "Fill in al fields !"
+                "Fill in all fields !"
             )
             return 
         }
@@ -54,7 +58,7 @@ const NewUserForm = () => {
             onSuccess:(ctx) => {
                 toast.dismiss()
                 toast.success("Welcome")
-                setStep(3)
+                setStep(5)
             },
             onError:(error) => {
                 toast.dismiss()
@@ -68,12 +72,13 @@ const NewUserForm = () => {
     };
 
     return (
-        <div className="bg-gray-100 flex justify-center items-center min-h-screen">
+        <div className="bg-gray-100 flex justify-center items-center min-h-screen relative">
+
             <div className="p-6 rounded-lg  w-full max-w-sm text-center">
                 <Logo />
                 <h2 className="text-xl font-semibold mb-4 text-center">Create Account</h2>
-                <form onSubmit={handleSubmit} className="space-y-8 text-left min-h-[70vh]">
-                    
+                <form onSubmit={handleSubmit} className="space-y-8 text-left min-h-[70vh] relative">
+                    <button className="px-2 py-1 bg-amber-900 text-white rounded-sm ml-auto absolute right-0 top-0 mt-[-15px]" onClick={() => navigate(-1)}>Back</button>
                     {/* Step 1 */}
                     {step === 1 && (
                         <>
@@ -158,41 +163,71 @@ const NewUserForm = () => {
                     {/* Step 4 */}
                     {step === 3 && (
                         <>
-                            <div className="space-y-5 text-center">
-                               <h1>Welcome to Ogigi revenue collection app</h1>
-                               <p>You will receive email shortly with your login details !</p>
-                            </div>
+                           <div>
+                           <label className="block text-sm font-medium text-gray-700">Sex</label>
+                            <select name="gender" value={formData.gender} onChange={handleChange} required className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
+                                <option value="unknown">Unknown</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                           </div>
+                           <div>
+                           <label className="block text-sm font-medium text-gray-700">Marital status</label>
+                            <select name="gender" value={formData.marital_status} onChange={handleChange} required className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widow">Widow</option>
+                            <option value="widower">Widower</option>
+
 
                             
+
+                            </select>
+                           </div>
                         </>
                     )}
+                    {step === 4 && (
+                        <>
+                           <div>
+                                <label className="block text-sm font-medium text-gray-700">Level</label>
+                                <select name="level" value={formData.kindred} onChange={handleChange}
+                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required >
+                                    <option value="level_1" disabled>Select Level</option>
 
-                    {/* Navigation Buttons */}
-                    <div className="flex justify-between mt-4 static bottom-0 my-4">
-                        {(step > 1 && step <= 2)  && (
-                            <button type="button" onClick={prevStep}
-                                className="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition">
-                                Previous
-                            </button>
+                                    <option value="level_1" >Level 1(General)</option>
+                                    <option value="level_2">Level 2 (Bronze)</option>
+                                    <option value="level_3">Level 3 (Silver)</option>
+                                    <option value="level_4">Level 4 (Gold)</option>
+                                    <option value="level_5">Level 5 (V.I.P)</option>
+                                    <option value="level_6">Level 5 (V.V.I.P)</option>
+
+                                </select>
+                            </div>
+                            <div>
+                            <label className="block text-sm font-medium text-gray-700">Phone</label>
+
+                            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"/>
+                            </div>
+                        </>
+                    )}
+                    {step === 5 && (
+                        <>
+                            <h1>Welcome to Ogigi revenue collection app</h1>
+                            <p>You will receive an email shortly with your login details!</p>
+                        </>
+                    )}
+                    <div className="flex justify-between mt-4">
+                        {step > 1 && step < 5 && (
+                            <button type="button" onClick={prevStep} className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer">Previous</button>
                         )}
-
-                        {(step < 2) && (
-                            <button type="button" onClick={nextStep}
-                                className="bg-[#7A7D47] text-white px-4 py-2 rounded-md hover:bg-[#989b4f] transition">
-                                Next
-                            </button>
+                        {step < 4 && (
+                            <button type="button" onClick={nextStep} className="bg-[#7A7D47] text-white px-4 py-2 rounded-md cursor-pointer">Next</button>
                         )}
-
-                        {(step === 2) && (
-                            <button type="submit" onClick={handleSubmit}
-                                className="bg-[#7A7D47] text-white px-4 py-2 rounded-md hover:bg-[#989b4f] transition">
-                                Submit
-                            </button>
+                        {step === 4 && (
+                            <button type="submit" className="bg-[#7A7D47] text-white px-4 py-2 rounded-md cursor-pointer">Submit</button>
                         )}
-
-
-
-
                     </div>
                 </form>
             </div>
