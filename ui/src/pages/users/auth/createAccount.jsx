@@ -130,10 +130,10 @@ const NewUserForm = () => {
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
                                     required >
                                     <option value="" disabled>Select a quarter</option>
-                                    <option value="Q1">Akanano</option>
-                                    <option value="Q2">Uru</option>
-                                    <option value="Q3">Ezinkwo</option>
-                                    <option value="Q4">Ikenga</option>
+                                    <option value="Akanano">Akanano</option>
+                                    <option value="Uru">Uru</option>
+                                    <option value="Ezinkwo">Ezinkwo</option>
+                                    <option value="Ikenga">Ikenga</option>
                                 </select>
                             </div>
 
