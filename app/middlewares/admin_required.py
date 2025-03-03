@@ -16,11 +16,11 @@ async def admin_required(req :Request, res: Response,call_next):
 
 
 async def is_authenticated(req :Request, res: Response,call_next):
-    if not req.user:
+    if not req.user[0]:
         return res.json({"auth":"UnAuthorized"},status_code=403)
-    if not req.user.is_authenticated:
+    if not req.user[0].is_authenticated:
         return res.json({"auth":"UnAuthorized"},status_code=403)
-    if  req.user.is_admin:
+    if  req.user[0].is_admin:
         print(9)
         return res.json({"auth":"UnAuthorized"},status_code=403)
         

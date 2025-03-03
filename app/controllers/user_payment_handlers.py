@@ -9,7 +9,7 @@ user_payment_router = Router("/api/user/payments")
 user_payment_router.add_middleware(is_authenticated)
 @user_payment_router.get("")
 async def get_user_payments(req: Request, res: Response):
-    user = req.user
+    user = req.user[0]
     limit = int(req.query_params.get("limit",15))
     offset = int(req.query_params.get("offset",0))
     payments =  await Payment.filter(user_id=user.id).all().limit(limit).offset(offset)
@@ -21,7 +21,7 @@ async def get_user_payments(req: Request, res: Response):
 
 @user_payment_router.post("/new")
 async def add_new_payment(req :Request, res :Response):
-    user = req.user
+    user = req.user[0]
     request_data = await req.json
     schema = PaymentSchema()
     try:

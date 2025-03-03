@@ -47,7 +47,7 @@ async def authenticate_admin(email,password):
     return None
     
 async def authenticate_user(email,password) -> User | None:
-    user :Users = await Users.filter(Q(email = email))
+    user :Users = await Users.filter(Q(email = email) & Q(password = password)).first()
     if not user:
         return None
     
