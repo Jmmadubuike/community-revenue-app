@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Ogidi Union</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background-color: #7A7D47;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+    }
+    .content h2 {
+      color: #7A7D47;
+      font-size: 20px;
+    }
+    .content p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .login-details {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .login-details p {
+      margin: 5px 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #7A7D47;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Welcome to Ogidi Union</h1>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+      <h2>Hello {{first_name}} {{last_name}},</h2>
+      <p>We are thrilled to welcome you to Ogidi Union! Thank you for joining our community. Below are your login details to access your account:</p>
+
+      <!-- Login Details Section -->
+      <div class="login-details">
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Password:</strong> {{password}}</p>
+      </div>
+
+      <p>Please keep your login details secure and do not share them with anyone. If you have any questions or need assistance, feel free to contact us.</p>
+      <p>Best regards,<br>The Ogidi Union Team</p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <p>&copy; 2023 Ogidi Union. All rights reserved.</p>
+      <p><a href="https://ogidiunion.com">Visit our website</a></p>
+    </div>
+  </div>
+</body>
+</html>

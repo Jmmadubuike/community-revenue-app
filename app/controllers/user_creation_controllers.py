@@ -27,8 +27,12 @@ async def create_user(req: Request, res: Response):
         return res.json(err.messages, status_code=422)
     
     password = generate_user_password()
-    user = await Users.create(**validated_data,password=password, idn = generate_random_10_digit())
+    user :Users = await Users.create(**validated_data,password=password, idn = generate_random_10_digit())
     if user:
         req.state.email = user.email
         req.state.password = password
+        req.state.first_name = user.first_name
+        req.state.last_name = user.last_name
+        
+        
     return res.json({"user": user, "status": "success"}, status_code=201)

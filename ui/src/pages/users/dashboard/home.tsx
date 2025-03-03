@@ -1,17 +1,19 @@
 import UserUI from "../../../components/ui/userui";
 import React, { useEffect, useState } from "react";
-import { callUserApi } from "../../../api";
+import { callApi, callUserApi } from "../../../api";
+import { callApi as callbaseapi}  from "@zayne-labs/callapi";
 import toast from "react-hot-toast";
 import { Button, Modal, Form, Input, Upload } from "antd";
 import { FaCopy, FaUpload } from "react-icons/fa";
 import UserPaymentElement from "../../../components/elements/userpaymentelement";
+import { Cloudinary } from '@cloudinary/url-gen';
 
 const UserDashBoard = () => {
     const [paymentDetails, setPaymentDetails] = useState();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [fileUrl, setFileUrl] = useState(null);
     const [form] = Form.useForm();
-
+    const cld = new Cloudinary({ cloud: { cloudName: 'dlikhtcy4' } });
+    const [proof,setProof] = useState()
     useEffect(() => {
         callUserApi("/financial/details", {
             method: "GET",
@@ -38,30 +40,53 @@ const UserDashBoard = () => {
     const handleUpload = (info) => {
         const file = info.file.originFileObj; // Get the file object
         console.log(file)
-        if (file) {
-            const fileUrl = URL.createObjectURL(file); // Generate a local URL for the file
-            setFileUrl(fileUrl);
-            toast.success("File URL extracted successfully!");
-        }
+      
+        setProof(file)
+        
     };
 
-    const handleSubmit = (values) => {
-        if (!fileUrl) {
+    const uploadProof = async () => {
+        const formData = new FormData();
+        formData.append("file", proof);
+        formData.append("upload_preset", "ogidi_union"); // Add your Cloudinary upload preset here
+    
+        try {
+            const response = await fetch("https://api.cloudinary.com/v1_1/dlikhtcy4/image/upload", {
+                method: "POST",
+                body: formData,
+            });
+    
+            const data = await response.json();
+    
+            if (data.secure_url) {
+                return data.secure_url; // Return the URL of the uploaded image
+            } else {
+                throw new Error("Failed to upload image");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("Failed to upload proof of payment.");
+            throw error; // Re-throw the error to handle it in the handleSubmit function
+        }
+    };
+    
+    const handleSubmit = async (values) => {
+        if (!proof) {
             toast.error("Please upload a proof of payment file.");
             return;
         }
-
+        const proof_url = await uploadProof()
         const payload = {
             name: values.name,
             amount: values.amount,
-            proof: fileUrl, // Send the extracted file URL
+            proof: proof_url, // Send the extracted file URL
             date_for: values.date_for,
             notes: values.notes,
         };
 
         console.log("Submitting Data:", payload);
 
-        callUserApi("user/payments/new", {
+        await callUserApi("user/payments/new", {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {

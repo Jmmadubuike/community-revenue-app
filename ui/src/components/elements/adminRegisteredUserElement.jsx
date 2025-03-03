@@ -74,7 +74,7 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
             key: "quarter",
         },
         {
-            title: "Age Grade",
+            title: "Village",
             dataIndex: "age_grade",
             key: "age_grade",
         },

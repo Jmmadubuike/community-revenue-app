@@ -74,7 +74,7 @@ const AdminDashboardHome = () => {
                         </div>}
                     </div>
                 </div>
-                <p className='text-sm text-gray-400'>Compared to NGN{stats?.users?.last_month} last month</p>
+                <p className='text-sm text-gray-400'>Compared to NGN{stats?.payments?.last_month} last month</p>
                 </Card>
 
                 <Card className="shadow-md rounded-lg  border border-gray-200 bg-white w-80 h-40">

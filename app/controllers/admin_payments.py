@@ -18,7 +18,7 @@ async def get_all_payments(req :Request, res :Response):
         base_query = base_query.filter(created_at__year = int(year))
         
     if month:
-        base_query = base_query.filter(created_at__month = int(month))
+        base_query = base_query.filter(created_at__month = int(month)).order_by("-created_at")
     list_of_payments = []
     for pays in  await base_query.all_data(limit = limit,offset = offset):
         list_of_payments.append(await pays.to_dict())

@@ -78,7 +78,11 @@ const NewUserForm = () => {
                 <Logo />
                 <h2 className="text-xl font-semibold mb-4 text-center">Create Account</h2>
                 <form onSubmit={handleSubmit} className="space-y-8 text-left min-h-[70vh] relative">
-                    <button className="px-2 py-1 bg-amber-900 text-white rounded-sm ml-auto absolute right-0 top-0 mt-[-15px]" onClick={() => navigate(-1)}>Back</button>
+                    <button className="px-2 py-1 bg-amber-900 text-white rounded-sm ml-auto absolute right-0 top-0 mt-[-15px]" onClick={(e) => {
+                        e.preventDefault()
+                        navigate(-1)
+
+                    }}>Back</button>
                     {/* Step 1 */}
                     {step === 1 && (
                         <>
@@ -126,22 +130,41 @@ const NewUserForm = () => {
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
                                     required >
                                     <option value="" disabled>Select a quarter</option>
-                                    <option value="Q1">Q1</option>
-                                    <option value="Q2">Q2</option>
-                                    <option value="Q3">Q3</option>
-                                    <option value="Q4">Q4</option>
+                                    <option value="Q1">Akanano</option>
+                                    <option value="Q2">Uru</option>
+                                    <option value="Q3">Ezinkwo</option>
+                                    <option value="Q4">Ikenga</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Age Grade</label>
+                                <label className="block text-sm font-medium text-gray-700">Vilages</label>
                                 <select name="age_grade" value={formData.age_grade} onChange={handleChange}
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
                                     required >
-                                    <option value="" disabled>Select an age grade</option>
-                                    <option value="Child">Child</option>
-                                    <option value="Teen">Teen</option>
-                                    <option value="Adult">Adult</option>
+                                    <option value="" disabled>Select a Village</option>
+                                    <option value="Ire">Ire</option>
+                                    <option value="Abo">Abo</option>
+                                    <option value="Ezi-Ogidi">Ezi-Ogidi</option>
+                                    <option value="Ezi-Ogidi">Ezi-Ogidi</option>
+                                    <option value="Umuru">Umuru</option>
+                                    <option value="Ntukwulu">Ntukwulu</option>
+                                    <option value="Ajilija">Ajilija</option>
+                                    <option value="Adazi">Adazi</option>
+                                    <option value="Umudoma">Umudoma</option>
+                                    <option value="Uru-Ezealor">Uru-Ezealor</option>
+                                    <option value="Uru-Orji">Uru-Orji</option>
+                                    <option value="Umu-Anugwo">Umu-Anugwo</option>
+                                    <option value="Ogwugwu-agu">Ogwugwu-agu</option>
+                                    <option value="Ogidi-Ani">Ogidi-Ani</option>
+                                    <option value="Nkwelle-Ogidi">Nkwelle-Ogidi</option>
+                                    <option value="Obodokwe">Obodokwe</option>
+                                    <option value="Anugwo">Anugwo</option>
+                                    <option value="Nanri">Nanri</option>
+                                    <option value="Odida">Odida</option>
+
+
+
                                 </select>
                             </div>
 
