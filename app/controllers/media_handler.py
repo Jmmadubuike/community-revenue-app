@@ -1,6 +1,6 @@
 from nexios.routing import Router
 from nexios.http.request import Request
-from nexios.http.response import NexioResponse
+from nexios.http import Response as NexiosResponse
 from datetime import datetime
 import uuid,os
 from pathlib import Path
@@ -19,7 +19,7 @@ async def upload_file(file):
     return file_path
 
 @media_upload_router.route("/new",methods=['post'])
-async def upload_media(request :Request, response :NexioResponse):
+async def upload_media(request :Request, response :NexiosResponse):
     files = await request.files
     multi = request.query_params.get("multi")
     if not multi:
@@ -43,7 +43,7 @@ async def upload_media(request :Request, response :NexioResponse):
 
 #TODO : ADD delete, put 
 @media_upload_router.route("/delete",methods=['delete'])
-async def delete_media(request :Request, response :NexioResponse):
+async def delete_media(request :Request, response :NexiosResponse):
     file_path = request.query.get("file_path")
     if not file_path:
         return response.json({

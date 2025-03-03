@@ -4,10 +4,10 @@ from nexios.auth.middleware import AuthenticationMiddleware
 async def admin_required(req :Request, res: Response,call_next):
     if not req.user:
         return res.json({"auth":"UnAuthorized"},status_code=403)
-    if not req.user.is_authenticated:
+    if not req.user[0].is_authenticated:
         print("NOt authent")
         return res.json({"auth":"UnAuthorized"},status_code=403)
-    if not req.user.is_admin:
+    if not req.user[0].is_admin:
         return res.json({"auth":"UnAuthorized"},status_code=403)
 
     
