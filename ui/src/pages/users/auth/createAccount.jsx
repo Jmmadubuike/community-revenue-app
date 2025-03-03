@@ -219,12 +219,12 @@ const NewUserForm = () => {
                                     required >
                                     <option value="level_1" disabled>Select Level</option>
 
-                                    <option value="level_1" >Level 1(General)</option>
+                                    <option value="level_1">Level 1(General)</option>
                                     <option value="level_2">Level 2 (Bronze)</option>
                                     <option value="level_3">Level 3 (Silver)</option>
                                     <option value="level_4">Level 4 (Gold)</option>
                                     <option value="level_5">Level 5 (V.I.P)</option>
-                                    <option value="level_6">Level 5 (V.V.I.P)</option>
+                                    <option value="level_6">Level 6 (Super V.I.P)</option>
 
                                 </select>
                             </div>
