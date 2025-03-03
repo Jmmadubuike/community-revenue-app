@@ -1,8 +1,8 @@
 import { createFetchClient } from "@zayne-labs/callapi";
 import {toast} from "react-hot-toast"
-export const backendHost = "https://ogidiunion.onrender.com"
+export const backendHost = "ogidiunion.onrender.com"
 
-export const baseHttpUrl = `http://${backendHost}`
+export const baseHttpUrl = `https://${backendHost}`
 export const callApi = createFetchClient({
     timeout: 315000,
     baseURL: `${baseHttpUrl}/api/`
