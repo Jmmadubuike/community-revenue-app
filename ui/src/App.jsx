@@ -17,11 +17,14 @@ const UserPaymentPage = React.lazy(() => import("./pages/users/dashboard/payment
 const IDNLoginPage = React.lazy(() => import("./pages/users/auth/idn"))
 const HomePages = React.lazy(() => import("./pages/home"))
 const UnauthorizedPage = React.lazy(()=> import("./pages/unautorized"))
+const AboutPage = React.lazy(()=> import("./pages/about"))
+
 
 function App() {
 
   return (
     <Router>
+      <div className='overflow-x-hidden'>
      <Toaster />
 
       <Routes>
@@ -45,6 +48,7 @@ function App() {
         <Route path="/user/dashboard" element={<UserDashboardHome />} />
         <Route path="/user/dashboard/payments" element={<UserPaymentPage />} />
         <Route path="/unautorized" element={<UnauthorizedPage />} />
+        <Route path="/about" element={<AboutPage />} />
 
 
 
@@ -53,6 +57,7 @@ function App() {
 
 
       </Routes>
+      </div>
     </Router>
   )
 }

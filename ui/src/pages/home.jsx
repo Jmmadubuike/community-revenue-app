@@ -8,6 +8,7 @@ import Project2Image from "../assets/project2.png"
 import Project3Image from "../assets/project3.png"
 import Section3 from "../assets/section-3.png"
 import ExecutiveMembers from '../components/members';
+import GetStarted from '../components/getStarted';
 const Home = () => {
     return (
         <div>
@@ -188,6 +189,8 @@ const Home = () => {
 
   </div>
     <ExecutiveMembers />
+
+    <GetStarted />
 </div>
 
             </div>

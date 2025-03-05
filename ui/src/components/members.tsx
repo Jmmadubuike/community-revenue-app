@@ -139,7 +139,7 @@ const ExecutiveMembers: React.FC = () => {
         Executive Members Of The Ogidi Union Advancement Forum
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {executiveMembers.map((member, index) => (
           <div key={index} className="flex border-b pb-4">
             <div className="flex-shrink-0 mr-4">

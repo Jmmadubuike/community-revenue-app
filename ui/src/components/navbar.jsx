@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "./common/logo";
 import {useNavigate} from "react-router-dom"
 import { FaAd,FaMoneyBill } from "react-icons/fa";
+import { FaBars} from "react-icons/fa";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const Navbar = () => {
                     className="md:hidden p-2 focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    {isOpen ? <FaAd size={24} /> : <FaMoneyBill size={24} />}
+                    {isOpen ? <FaBars size={24} /> : <FaBars size={24} />}
                 </button>
                 <div className="hidden md:flex space-x-6">
                     <a href="#" className="hover:text-gray-600">Home</a>
@@ -40,13 +41,13 @@ const Navbar = () => {
                             <FaAd size={24} />
                         </button>
                         <a href="#" className="hover:text-gray-600">Home</a>
-                        <a href="#" className="hover:text-gray-600">About</a>
-                        <a href="#" className="hover:text-gray-600">Projects</a>
-                        <a href="#" className="hover:text-gray-600">Link 4</a>
-                        <a href="#" className="hover:text-gray-600">Link 5</a>
-                        <a href="#" className="hover:text-gray-600">Link 6</a>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Login</button>
-                        <button className="border px-4 py-2 rounded-lg">Get Started</button>
+                    <a href="#" className="hover:text-gray-600">About</a>
+                    <a href="#" className="hover:text-gray-600">Projects</a>
+                    <a href="#" className="hover:text-gray-600">News/Event </a>
+                    <a href="#" className="hover:text-gray-600">Contact</a>
+                    <a href="#" className="hover:text-gray-600">Gallery</a>
+                        <button className="cursor-pointer bg-transparent text-black px-4 py-2 border-[#7A7D47] border-2">Login</button>
+                        <button className="cursor-pointer px-4 py-2 text-white bg-[#7A7D47] my-2">Get Started</button>
                     </div>
                 </div>
             )}
