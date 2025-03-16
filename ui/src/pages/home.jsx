@@ -9,6 +9,7 @@ import Project3Image from "../assets/project3.png"
 import Section3 from "../assets/section-3.png"
 import ExecutiveMembers from '../components/members';
 import GetStarted from '../components/getStarted';
+import Footer from '../components/common/footer';
 const Home = () => {
     return (
         <div>
@@ -194,6 +195,8 @@ const Home = () => {
 </div>
 
             </div>
+      <Footer />
+
         </div>
     );
 };

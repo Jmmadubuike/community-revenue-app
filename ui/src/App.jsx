@@ -18,6 +18,14 @@ const IDNLoginPage = React.lazy(() => import("./pages/users/auth/idn"))
 const HomePages = React.lazy(() => import("./pages/home"))
 const UnauthorizedPage = React.lazy(()=> import("./pages/unautorized"))
 const AboutPage = React.lazy(()=> import("./pages/about"))
+const ProjetcPage = React.lazy(()=> import("./pages/project"))
+const ContactPage = React.lazy(()=> import("./pages/contact"))
+const GallaryPage = React.lazy(()=> import("./pages/gallary"))
+const ExecutivePage = React.lazy(()=> import("./pages/executive"))
+
+
+
+
 
 
 function App() {
@@ -49,6 +57,14 @@ function App() {
         <Route path="/user/dashboard/payments" element={<UserPaymentPage />} />
         <Route path="/unautorized" element={<UnauthorizedPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/project" element={<ProjetcPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/gallary" element={<GallaryPage />} />
+        <Route path="/executive" element={<ExecutivePage />} />
+
+
+
+
 
 
 

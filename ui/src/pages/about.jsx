@@ -2,6 +2,10 @@ import Navbar from "../components/navbar"
 import HeroImage from "../assets/hero.jpeg"
 import Sectiom1img from "../assets/about-section-1.png"
 import KingPic from "../assets/kingpics.png"
+import CheifPic from "../assets/cheif-about.png"
+import GetStarted from '../components/getStarted';
+import Footer from "../components/common/footer"
+
  const ApoutPage = () => {
     return (
         <div>
@@ -29,7 +33,7 @@ import KingPic from "../assets/kingpics.png"
 
             <div className="bg-[#FFF5F4] mt-16 py-24 gap-8">
                 <div className="flex justify-center md:flex-row flex-col items-center gap-8">
-                        <div className="max-w-1/3">
+                        <div className="md:max-w-1/3 px-4">
                             <h1 className="text-lg font-extralight">About Us  ___________</h1>
 
                             <h1 className="text-3xl">ABOUT OGIDI KINGDOM</h1>
@@ -95,7 +99,30 @@ import KingPic from "../assets/kingpics.png"
                         </p>
                     </div>
             </div>
+
+            <div className="flex md:px-24 px-1 flex-col md:flex-row items-center gap-8 mt-8">
+                <div className="md:max-w-2/4">
+                        <h1 className="text-3xl w-3/4">Hon. Chief Ikwuka Okoye (Anumili)</h1>
+                        <p className="text-2xl w-2/3">
+                        (President-General, Ogidi Union Nigeria)
+                        </p>
+                        <p className="text-sm">Igwe Onyido was born on 24th November, 1956 in the ancient city of  Kano to the family of late Chief and Mrs Dennis Nwafor Onyido (Okaka  Ogidi) of Uruezealor Village, Ogidi in Idemili North Local Government  Area of Anambra State. The young Alex started his primary education at  Ibo Union Primary School, Kano in 1962. His schooling was disrupted by  the Nigeria Civil War of 1967 to1970. He relocated to the East with his  parents following the war. After the war, he completed his primary  education at Ogbor Primary School, Ogidi in 1971 before attending  Oraukwu Grammar School, Oraukwu between 1971 and 1976. He passed his  West African Senior School Certificate Examination, WASSCE in flying  colours. He graduated as a certified pharmacist from Ahmadu Bello  University, ABU, Zaria in 1982. After his one year internship and  National Youth Service, NYSC, he gained employment into Kano State  Ministry of Health.
+ 
+                        </p>
+                </div>
+                <div>
+
+                    <img src={CheifPic} />
+                </div>
+            </div>
+            <div className="mt-12">
+                <GetStarted />
+            </div>
+            <div>
+
+            </div>
         </div>
+        <Footer />
         </div>
     )
 }
