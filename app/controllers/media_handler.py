@@ -5,7 +5,10 @@ from datetime import datetime
 import uuid,os
 from pathlib import Path
 BASE_UPLOAD_DIR = "/tmp/media"
-Path(BASE_UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
+try:
+    Path(BASE_UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
+except:
+    pass #fail silently
 media_upload_router = Router(prefix="/api/media/upload")
 
 async def upload_file(file):
