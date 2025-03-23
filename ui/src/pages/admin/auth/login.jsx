@@ -36,12 +36,14 @@ function AdminLoginPage() {
 
       },
       onError:error =>{
-        if (error?.response?.status == 401){
+        toast.dismiss()
+        if (error?.response?.status == 400){
           toast.dismiss()
 
           toast.error("Invalid credentials")
 
         }else{
+          toast.dismiss()
           toast.custom("Network error")
         }
       }

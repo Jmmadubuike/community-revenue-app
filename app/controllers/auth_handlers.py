@@ -26,7 +26,7 @@ async def handler_admin_login(req :Request,res :Response):
                               validated_data['password'])
     
     if not admin_user:
-        return res.status(401).json({"auth":"Authentication error"})
+        return res.json({"auth":"Authentication error"}, status_code=400)
     
     auth_payload = {
         "id" : str(admin_user.id),
