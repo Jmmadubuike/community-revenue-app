@@ -1,6 +1,6 @@
 from nexios import get_application
 from nexios.routing import Routes
-from config import nexios_config,connect_db,close_db
+from config import nexios_config,connect_db,close_db,ENV
 from controllers import index
 import asyncclick as click
 from cli.create_admin import new_admin as create_admin
@@ -92,7 +92,8 @@ async def on_shutdown():
     await close_db()
 
 app.add_route(Routes("",index))
-app.add_route(Routes("/media/*",StaticFilesHandler("media",url_prefix="/media/")))
+if not ENV == "prod":
+    app.add_route(Routes("/media/*",StaticFilesHandler("media",url_prefix="/media/")))
 
 """ you can add middleware
     app.add_middleware(...)
