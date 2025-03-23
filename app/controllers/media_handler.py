@@ -4,7 +4,7 @@ from nexios.http import Response as NexiosResponse
 from datetime import datetime
 import uuid,os
 from pathlib import Path
-BASE_UPLOAD_DIR = "media"
+BASE_UPLOAD_DIR = "/tmp/media"
 Path(BASE_UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
 media_upload_router = Router(prefix="/api/media/upload")
 
