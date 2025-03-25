@@ -9,6 +9,22 @@ import Ezeugo from "../assets/members/ezeugo.jpg"
 import Ide from "../assets/members/ide.jpg"
 import Akadike from "../assets/members/akadike.jpg"
 import Achebe from "../assets/members/achebe.jpg"
+import Ndika from "../assets/members/ndika.jpg"
+import Ngozi from "../assets/members/ngozi.jpg"
+import Chekwube from "../assets/members/checkwube.jpg"
+import Ezeudo from "../assets/members/ezeudo.jpg"
+import Ochendu from "../assets/members/ochendu.jpg"
+import ObaEgo from "../assets/members/ObaEgo.jpg"
+import Okafor from "../assets/members/okafor.jpg"
+import Anthony from "../assets/members/anthony.jpg"
+
+
+
+
+
+
+
+
 
 
 
@@ -62,14 +78,23 @@ const executiveMembers: ExecutiveMember[] = [
     title: "Elder",
     position: "Administrative Secretary",
     location: "",
-    image: "https://via.placeholder.com/100",
+    image: Chekwube
   },
   {
-    name: "Dr. Tony Neka",
+    name: "Okey Amobi. (ObaEgo)",
+    title: "Chief(Engr)",
+    position: "Member",
+    location: "",
+    image: ObaEgo
+  },
+
+
+  {
+    name: "Dr. Tony Meka",
     title: "High Chief",
     position: "Member",
     location: "Ohuocha",
-    image: "https://via.placeholder.com/100",
+    image: Ochendu
   },
 
   {
@@ -142,26 +167,34 @@ const executiveMembers: ExecutiveMember[] = [
     location: "",
     image: Achebe
   },
+
   {
-    name: "Vincent Obi",
+    name: " Chris Obi Okafor",
+    title: "Hon",
+    position: "Member",
+    location: "",
+    image: Okafor
+  },
+  {
+    name: "Vincent Obi  (Ezeudo)",
     title: "Chief",
     position: "Member",
     location: "Iruofu Ogidi",
-    image: "https://via.placeholder.com/100",
+    image: Ezeudo,
   },
   {
-    name: "Ngozi Ofoghan",
+    name: "Ngozi Oligboh (Ada Ebeondi)",
     title: "Mrs",
     position: "Member",
-    location: "Ania Ebenweali",
-    image: "https://via.placeholder.com/100",
+    location: "",
+    image: Ngozi
   },
   {
-    name: "Obora Ndika",
+    name: "Obora Ndika  (Nnanyelugo)",
     title: "Chief",
     position: "Member",
     location: "Umunwagana",
-    image: "https://via.placeholder.com/100",
+    image: Ndika
   },
   {
     name: "Obechukwu Amadi",
@@ -171,11 +204,11 @@ const executiveMembers: ExecutiveMember[] = [
     image: "https://via.placeholder.com/100",
   },
   {
-    name: "Cornelius Anthony Ugbamna",
-    title: "Chief",
+    name: "Ubakanma Anthony ( People)",
+    title: "Comrade  Chief",
     position: "Member",
     location: "Umueri",
-    image: "https://via.placeholder.com/100",
+    image: Anthony
   },
 ]
 
