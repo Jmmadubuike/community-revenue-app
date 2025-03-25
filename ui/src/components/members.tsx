@@ -1,4 +1,22 @@
 import type React from "react"
+import EmakaOnyido from "../assets/members/emeka_onyido.jpg"
+import Obiokoye from "../assets/members/obi-okoye.jpg"
+import Omelora from "../assets/members/omelora.jpg"
+import Ugolue from "../assets/members/ugolue.jpg"
+import Ubum from "../assets/members/obum.jpg"
+import Ibezim from "../assets/members/ibezim.jpg"
+import Ezeugo from "../assets/members/ezeugo.jpg"
+import Ide from "../assets/members/ide.jpg"
+import Akadike from "../assets/members/akadike.jpg"
+import Achebe from "../assets/members/achebe.jpg"
+
+
+
+
+
+
+
+
 
 // Define the type for executive members
 type ExecutiveMember = {
@@ -14,30 +32,30 @@ const executiveMembers: ExecutiveMember[] = [
   {
     name: "Dr. Emeka Onyido",
     title: "High Chief",
-    position: "Chairman",
+    position: "Chairman, Operation",
     location: "Ohuozoma",
-    image: "https://via.placeholder.com/100",
+    image: EmakaOnyido,
   },
   {
     name: "Rotuu Odi-Okoye",
     title: "High Chief Barr.",
-    position: "1st Vice Chairman",
+    position: "Chairman, Operation",
     location: "Ogboli",
-    image: "https://via.placeholder.com/100",
+    image: Obiokoye
   },
   {
-    name: "Steve Ibegbu",
+    name: "Stephen  Ibegbu (omelora)",
     title: "High Chief",
-    position: "2nd Vice Chairman",
+    position: "Chairman, Admin",
     location: "Ohuocha",
-    image: "https://via.placeholder.com/100",
+    image: Omelora
   },
   {
-    name: "Chike Madugwuna",
+    name: "Chike Maduagwuna, (Ugolue)",
     title: "Chief Sir",
     position: "Secretary",
     location: "Ilogwuta",
-    image: "https://via.placeholder.com/100",
+    image:Ugolue
   },
   {
     name: "Chekwube Okwuonu",
@@ -53,6 +71,14 @@ const executiveMembers: ExecutiveMember[] = [
     location: "Ohuocha",
     image: "https://via.placeholder.com/100",
   },
+
+  {
+    name: "Obum Osakwe Ph.D",
+    title: "High Chief Barr.",
+    position: "Member",
+    location: "",
+    image: Ubum,
+  },
   {
     name: "Ben. Otuonweke",
     title: "High Chief",
@@ -61,11 +87,18 @@ const executiveMembers: ExecutiveMember[] = [
     image: "https://via.placeholder.com/100",
   },
   {
-    name: "Uzike Ibezim",
+    name: "Cletus Onwuzulike (Ide)",
+    title: "High Chief",
+    position: "Member",
+    location: "",
+    image: Ide,
+  },
+  {
+    name: "Uche Ibezim (Ezechikwadolu)",
     title: "Chief Barr.",
     position: "Member",
     location: "Ezinihitteaboro Nke Ngu Na Abo",
-    image: "https://via.placeholder.com/100",
+    image: Ibezim,
   },
   {
     name: "Obinna Mbaukwu",
@@ -82,11 +115,18 @@ const executiveMembers: ExecutiveMember[] = [
     image: "https://via.placeholder.com/100",
   },
   {
-    name: "Humphrey Umezinwa",
+    name: "Chief Obiora Mbaekwe (Ezeugo)",
+    title: "",
+    position: "Member",
+    location: "",
+    image: Ezeugo,
+  },
+  {
+    name: " Humphrey Udemezue (Akadike)",
     title: "Chief Engr.",
     position: "Member",
     location: "Umueri",
-    image: "https://via.placeholder.com/100",
+    image: Akadike
   },
   {
     name: "Ubosi Achalla",
@@ -94,6 +134,13 @@ const executiveMembers: ExecutiveMember[] = [
     position: "Member",
     location: "Ohuofu",
     image: "https://via.placeholder.com/100",
+  },
+  {
+    name: "Chief Udoji Achebe   (Okosisi)",
+    title: "Chief",
+    position: "Member",
+    location: "",
+    image: Achebe
   },
   {
     name: "Vincent Obi",
