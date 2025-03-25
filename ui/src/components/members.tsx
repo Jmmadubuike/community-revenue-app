@@ -53,16 +53,16 @@ const executiveMembers: ExecutiveMember[] = [
     image: EmakaOnyido,
   },
   {
-    name: "Rotuu Odi-Okoye",
+    name: "Rotuu Odi-Okoye (Igiligi)",
     title: "High Chief Barr.",
-    position: "Chairman, Operation",
+    position: "Vice Chairman, Operation",
     location: "Ogboli",
     image: Obiokoye
   },
   {
     name: "Stephen  Ibegbu (omelora)",
     title: "High Chief",
-    position: "Chairman, Admin",
+    position: "Vice Chairman, Admin",
     location: "Ohuocha",
     image: Omelora
   },
@@ -98,7 +98,7 @@ const executiveMembers: ExecutiveMember[] = [
   },
 
   {
-    name: "Obum Osakwe Ph.D",
+    name: "Obum Osakwe Ph.D (Ezeudo)",
     title: "High Chief Barr.",
     position: "Member",
     location: "",
