@@ -1,4 +1,7 @@
-import type React from "react"
+"use client"
+
+import { useState } from "react"
+import { FaUserTie, FaUserCircle } from "react-icons/fa"
 import EmakaOnyido from "../assets/members/emeka_onyido.jpg"
 import Obiokoye from "../assets/members/obi-okoye.jpg"
 import Omelora from "../assets/members/omelora.jpg"
@@ -18,22 +21,6 @@ import ObaEgo from "../assets/members/ObaEgo.jpg"
 import Okafor from "../assets/members/okafor.jpg"
 import Anthony from "../assets/members/anthony.jpg"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Define the type for executive members
 type ExecutiveMember = {
   name: string
@@ -46,99 +33,96 @@ type ExecutiveMember = {
 // Create an array of executive members data
 const executiveMembers: ExecutiveMember[] = [
   {
-    name: "Dr. Emeka Onyido",
+    name: "Dr. Emeka Onyido (Onosoleze)",
     title: "High Chief",
-    position: "Chairman, Operation",
+    position: "Chairman",
     location: "Ohuozoma",
     image: EmakaOnyido,
   },
   {
     name: "Rotuu Odi-Okoye (Igiligi)",
     title: "High Chief Barr.",
-    position: "Vice Chairman, Operation",
+    position: "1st Vice Chairman",
     location: "Ogboli",
-    image: Obiokoye
+    image: Obiokoye,
   },
   {
-    name: "Stephen  Ibegbu (omelora)",
+    name: "Stephen  Ibegbu (Omelora)",
     title: "High Chief",
-    position: "Vice Chairman, Admin",
+    position: "2nd Vice Chairman",
     location: "Ohuocha",
-    image: Omelora
+    image: Omelora,
   },
   {
     name: "Chike Maduagwuna, (Ugolue)",
     title: "Chief Sir",
     position: "Secretary",
     location: "Ilogwuta",
-    image:Ugolue
+    image: Ugolue,
   },
   {
     name: "Chekwube Okwuonu",
     title: "Elder",
     position: "Administrative Secretary",
     location: "",
-    image: Chekwube
+    image: Chekwube,
   },
   {
     name: "Okey Amobi. (ObaEgo)",
-    title: "Chief(Engr)",
+    title: "Chief (Engr).",
     position: "Member",
     location: "",
-    image: ObaEgo
+    image: ObaEgo,
   },
-
-
   {
     name: "Dr. Tony Meka",
     title: "High Chief",
     position: "Member",
     location: "Ohuocha",
-    image: Ochendu
+    image: Ochendu,
   },
-
   {
-    name: "Obum Osakwe Ph.D (Ezeudo)",
+    name: "Obum Osakwe Ph.D (Ezeudo)",
     title: "High Chief Barr.",
     position: "Member",
     location: "",
     image: Ubum,
   },
+  // {
+  //   name: "Ben. Otuonweke",
+  //   title: "High Chief",
+  //   position: "Member",
+  //   location: "Ohuocha Ph.D",
+  //   image: "https://via.placeholder.com/100",
+  // },
   {
-    name: "Ben. Otuonweke",
-    title: "High Chief",
-    position: "Member",
-    location: "Ohuocha Ph.D",
-    image: "https://via.placeholder.com/100",
-  },
-  {
-    name: "Cletus Onwuzulike (Ide)",
+    name: "Cletus Onwuzulike (Ide)",
     title: "High Chief",
     position: "Member",
     location: "",
     image: Ide,
   },
   {
-    name: "Uche Ibezim (Ezechikwadolu)",
+    name: "Uche Ibezim (Ezechikwadolu Nke Nge Na Ogidi)",
     title: "Chief Barr.",
     position: "Member",
     location: "Ezinihitteaboro Nke Ngu Na Abo",
     image: Ibezim,
   },
-  {
-    name: "Obinna Mbaukwu",
-    title: "Chief",
-    position: "Member",
-    location: "Ilogwuta",
-    image: "https://via.placeholder.com/100",
-  },
-  {
-    name: "Chuka Onwuzulike",
-    title: "High Chief",
-    position: "Member",
-    location: "Ohuocha",
-    image: "https://via.placeholder.com/100",
-  },
+  // {
+  //   name: "Obinna Mbaukwu",
+  //   title: "Chief",
+  //   position: "Member",
+  //   location: "Ilogwuta",
+  //   image: "https://via.placeholder.com/100",
+  // },
+  // {
+  //   name: "Chuka Onwuzulike (Ide Ogidi)",
+  //   title: "High Chief",
+  //   position: "Member",
+  //   location: "Ohuocha",
+  //   image: "https://via.placeholder.com/100",
+  // },
   {
     name: "Chief Obiora Mbaekwe (Ezeugo)",
     title: "",
@@ -147,95 +131,117 @@ const executiveMembers: ExecutiveMember[] = [
     image: Ezeugo,
   },
   {
-    name: " Humphrey Udemezue (Akadike)",
+    name: "Humphrey Udemezue (Akadike Ogidi)",
     title: "Chief Engr.",
     position: "Member",
     location: "Umueri",
-    image: Akadike
+    image: Akadike,
   },
+  // {
+  //   name: "Ubosi Achalla",
+  //   title: "Chief",
+  //   position: "Member",
+  //   location: "Ohuofu",
+  //   image: "https://via.placeholder.com/100",
+  // },
   {
-    name: "Ubosi Achalla",
-    title: "Chief",
-    position: "Member",
-    location: "Ohuofu",
-    image: "https://via.placeholder.com/100",
-  },
-  {
-    name: "Chief Udoji Achebe   (Okosisi)",
+    name: "Chief Udoji Achebe (Okosisi)",
     title: "Chief",
     position: "Member",
     location: "",
-    image: Achebe
+    image: Achebe,
   },
-
   {
     name: " Chris Obi Okafor",
     title: "Hon",
     position: "Member",
     location: "",
-    image: Okafor
+    image: Okafor,
   },
   {
-    name: "Vincent Obi  (Ezeudo)",
+    name: "Vincent Obi  (Ezeudo Ogidi)",
     title: "Chief",
     position: "Member",
     location: "Iruofu Ogidi",
     image: Ezeudo,
   },
   {
-    name: "Ngozi Oligboh (Ada Ebeondi)",
+    name: "Ngozi Oligboh (Ada Ebeonadi)",
     title: "Mrs",
     position: "Member",
     location: "",
-    image: Ngozi
+    image: Ngozi,
   },
   {
-    name: "Obora Ndika  (Nnanyelugo)",
+    name: "Obiora Ndika  (Nnanyelugo)",
     title: "Chief",
     position: "Member",
     location: "Umunwagana",
-    image: Ndika
+    image: Ndika,
   },
+  // {
+  //   name: "Obechukwu Amadi",
+  //   title: "Chief",
+  //   position: "Member",
+  //   location: "Odoli",
+  //   image: "https://via.placeholder.com/100",
+  // },
   {
-    name: "Obechukwu Amadi",
-    title: "Chief",
-    position: "Member",
-    location: "Odoli",
-    image: "https://via.placeholder.com/100",
-  },
-  {
-    name: "Ubakanma Anthony ( People)",
+    name: "Ubakanma Anthony (People)",
     title: "Comrade  Chief",
     position: "Member",
     location: "Umueri",
-    image: Anthony
+    image: Anthony,
   },
 ]
 
-const ExecutiveMembers: React.FC = () => {
+const ExecutiveMembers = () => {
+  // State to track which images have failed to load
+  const [failedImages, setFailedImages] = useState<Record<number, boolean>>({})
+
+  // Handle image loading error
+  const handleImageError = (index: number) => {
+    setFailedImages((prev) => ({
+      ...prev,
+      [index]: true,
+    }))
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-2xl md:text-3xl font-bold text-center mb-8">
-        Executive Members Of The Ogidi Union Advancement Forum
+        Executive Members of the Ogidi Union Advancement Forum
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {executiveMembers.map((member, index) => (
           <div key={index} className="flex border-b pb-4">
             <div className="flex-shrink-0 mr-4">
-              <div className="rounded-full overflow-hidden w-16 h-16 border">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="rounded-full overflow-hidden w-24 h-24 bg-gray-100 flex items-center justify-center">
+                {failedImages[index] || member.image === "https://via.placeholder.com/100" ? (
+                  // Display avatar icon if image failed to load or is a placeholder
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                    {member.title.toLowerCase().includes("mrs") || member.name.toLowerCase().includes("ngozi") ? (
+                      <FaUserCircle size={60} className="text-gray-500" />
+                    ) : (
+                      <FaUserTie size={60} className="text-gray-500" />
+                    )}
+                  </div>
+                ) : (
+                  // Try to load the actual image
+                  <img
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    onError={() => handleImageError(index)}
+                  />
+                )}
               </div>
             </div>
             <div>
-              <p className="font-medium text-sm">
+              <p className="text-sm font-bold">
                 {member.title} {member.name}
               </p>
-              <p className="text-sm text-gray-600">{member.location}</p>
               <p className="text-sm text-red-500 font-medium mt-1">{member.position}</p>
             </div>
           </div>

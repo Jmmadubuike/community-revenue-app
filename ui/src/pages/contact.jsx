@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar"
-import HeroImage from "../assets/contact-page-hero.png"
+import HeroImage from "../assets/projectPageHero.jpg"
+
 import { FaMap,FaPhone,FaMailBulk } from "react-icons/fa"
 import { useState } from "react"
 import GetStarted from "../components/getStarted"
@@ -38,13 +39,13 @@ import Footer from "../components/common/footer"
             className="relative h-[80vh] bg-cover bg-center"
             style={{ backgroundImage: `url(${HeroImage})` }}
             >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-[#7A7D47] via-silver"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
             <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
                 <div className='flex flex-col items-center'>
 
-                <p>Unite, Serve, Strengthen Ogidi Together </p>
-                <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">
-                Contact
+                {/* <p>Unite, Serve, Strengthen Ogidi Together </p> */}
+                <h1 className="text-4xl md:text-6xl font-bold ">
+                Contact Us
                 </h1>
 
                 </div>
@@ -57,7 +58,7 @@ import Footer from "../components/common/footer"
       <div className="flex flex-col md:flex-row">
         {/* Left Column - Contact Information */}
         <div className="w-full md:w-1/3 p-6 md:p-8">
-          <h1 className="text-2xl font-bold text-[#002147] mb-2">Contact Us</h1>
+          <h1 className="text-2xl font-bold  mb-2">Contact Us</h1>
           <p className="text-gray-600 mb-6">
             Questions, comments, or suggestions?
             <br />
@@ -66,10 +67,9 @@ import Footer from "../components/common/footer"
 
           <div className="space-y-4 mt-8">
             <div className="flex items-start">
-              <FaMap className="text-purple-500 mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
+              <FaMap className=" mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
               <p className="text-gray-800">
-                <strong>Ogidi Town Hall, Skill Acquisition Block,</strong>
-                <br />
+                <span>Ogidi Town Hall, Skill Acquisition Block,</span>
                 Ogidi, Anambra State,
                 <br />
                 Nigeria
@@ -77,16 +77,16 @@ import Footer from "../components/common/footer"
             </div>
 
             <div className="flex items-center">
-              <FaPhone className="text-purple-500 mr-3 h-5 w-5 flex-shrink-0" />
+              <FaPhone className=" mr-3 h-5 w-5 flex-shrink-0" />
               <a href="tel:+12346789108" className="text-gray-800">
-                +1 234 678 9108 99
+                +2349069627839
               </a>
             </div>
 
             <div className="flex items-center">
-              <FaMailBulk className="text-purple-500 mr-3 h-5 w-5 flex-shrink-0" />
+              <FaMailBulk className=" mr-3 h-5 w-5 flex-shrink-0" />
               <a href="mailto:Contact@ogidi.com" className="text-gray-800">
-                Contact@ogidi.com
+              ogidiunionadvancementforum@gmail.com
               </a>
             </div>
           </div>
@@ -157,7 +157,7 @@ import Footer from "../components/common/footer"
 
             <button
               type="submit"
-              className="w-full bg-[#7a7d4e] hover:bg-[#696b43] text-white py-2 px-4 rounded transition duration-200"
+              className="w-full bg-black text-white py-2 px-4 rounded transition duration-200"
             >
               SEND MESSAGE
             </button>

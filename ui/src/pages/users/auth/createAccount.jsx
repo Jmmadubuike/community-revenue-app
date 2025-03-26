@@ -13,7 +13,7 @@ const NewUserForm = () => {
         country_of_residence: "",
         quarter: "",
         age_grade: "",
-        kindred: "",
+        kindred: "Any",
         gender: "unknown",
         marital_status: "single",
         level: "level_1",
@@ -31,7 +31,7 @@ const NewUserForm = () => {
             toast.error("Fill all required fields");
             return;
         }
-        if (step === 2 && (!formData.country_of_residence || !formData.quarter || !formData.age_grade || !formData.kindred)) {
+        if (step === 2 && (!formData.country_of_residence || !formData.quarter || !formData.age_grade)) {
             toast.error("Fill all required fields");
             return;
         }
@@ -44,7 +44,9 @@ const NewUserForm = () => {
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        if (!formData.country_of_residence || !formData.quarter || !formData.age_grade || !formData.kindred){
+        if (!formData.country_of_residence || !formData.quarter || !formData.age_grade 
+            
+        ){
             toast.error(
                 "Fill in all fields !"
             )
@@ -168,18 +170,7 @@ const NewUserForm = () => {
                                 </select>
                             </div>
 
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700">Kindred</label>
-                                <select name="kindred" value={formData.kindred} onChange={handleChange}
-                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
-                                    required >
-                                    <option value="" disabled>Select kindred</option>
-                                    <option value="North">North</option>
-                                    <option value="South">South</option>
-                                    <option value="East">East</option>
-                                    <option value="West">West</option>
-                                </select>
-                            </div>
+                           
                         </>
                     )}
 
@@ -189,7 +180,7 @@ const NewUserForm = () => {
                            <div>
                            <label className="block text-sm font-medium text-gray-700">Sex</label>
                             <select name="gender" value={formData.gender} onChange={handleChange} required className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
-                                <option value="unknown">Unknown</option>
+                                <option value="unknown" disabled>Select</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -246,10 +237,10 @@ const NewUserForm = () => {
                             <button type="button" onClick={prevStep} className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer">Previous</button>
                         )}
                         {step < 4 && (
-                            <button type="button" onClick={nextStep} className="bg-[#7A7D47] text-white px-4 py-2 rounded-md cursor-pointer">Next</button>
+                            <button type="button" onClick={nextStep} className="bg-black text-white px-4 py-2 rounded-md cursor-pointer">Next</button>
                         )}
                         {step === 4 && (
-                            <button type="submit" className="bg-[#7A7D47] text-white px-4 py-2 rounded-md cursor-pointer">Submit</button>
+                            <button type="submit" className="bg-black text-white px-4 py-2 rounded-md cursor-pointer">Submit</button>
                         )}
                     </div>
                 </form>

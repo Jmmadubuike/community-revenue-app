@@ -67,7 +67,7 @@ const FinancialManagement: React.FC = () => {
                     <div className='bg-white p-4 rounded-lg shadow-xs'>
                         <div className='flex justify-between items-start'>
                             <p className='font-bold'>{editField.bankName}</p>
-                            <Button type='primary' onClick={openModal} className='bg-[#7A7D47]'>Edit</Button>
+                            <Button type='primary' onClick={openModal} className='bg-black'>Edit</Button>
                         </div>
                         <div className='mt-6 flex flex-col'>
                             <p className='font-extrabold'>{editField.accountName}</p>
@@ -85,7 +85,7 @@ const FinancialManagement: React.FC = () => {
                             <p className='font-extralight text-blue-800'>Copy Account</p>
                             <Button 
                             onClick={copyToClipboard}
-                            type='primary' icon={<FaCopy />} className='m bg-[#7A7D47]'>Copy</Button>
+                            type='primary' icon={<FaCopy />} className='m bg-black'>Copy</Button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ const FinancialManagement: React.FC = () => {
                         <li className='font-extralight'>Please ensure you include your name or unique ID as payment reference to enable us identify your payment.</li>
                         <li className='font-extralight'>Please ensure you include your name or unique ID as payment reference to enable us identify your payment.</li>
                     </ul>
-                    <Button type='primary' className='mt-4 bg-[#7A7D47]' onClick={openModal}>Edit Notes</Button>
+                    <Button type='primary' className='mt-4 bg-black' onClick={openModal}>Edit Notes</Button>
                 </div>
             </div>
             {/* Modal */}

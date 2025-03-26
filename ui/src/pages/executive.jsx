@@ -162,7 +162,7 @@ const ExecutivesPage = () => {
 
       <div>
         <div className="relative h-[80vh] bg-cover bg-center" style={{ backgroundImage: `url(${HeroImage})` }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-[#7A7D47] via-silver"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
           <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
             <div className="flex flex-col items-center">
               <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">{pages[currentPage].title}</h1>

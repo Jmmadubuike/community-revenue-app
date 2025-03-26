@@ -1,5 +1,6 @@
-import React from 'react';
-import Navbar from '../components/navbar';
+"use client"
+
+import Navbar from "../components/navbar"
 import HeroImage from "../assets/hero.jpeg"
 import Section1Image from "../assets/section-img.jpeg"
 import Sesion2Image from "../assets/sesion2-img.png"
@@ -7,198 +8,317 @@ import Project1Image from "../assets/project1.png"
 import Project2Image from "../assets/project2.png"
 import Project3Image from "../assets/project3.png"
 import Section3 from "../assets/section-3.png"
-import ExecutiveMembers from '../components/members';
-import GetStarted from '../components/getStarted';
-import Footer from '../components/common/footer';
+import ExecutiveMembers from "../components/members"
+import GetStarted from "../components/getStarted"
+import Footer from "../components/common/footer"
+import {
+  FaArrowRight,
+  FaImage,
+  FaUserCircle,
+  FaBuilding,
+  FaLightbulb,
+  FaRoad,
+  FaUsers,
+  FaGraduationCap,
+} from "react-icons/fa"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
 const Home = () => {
-    return (
-        <div>
-            <Navbar />
-            <div>
-                {/* Section 1 */}
-                    <div
-                className="relative h-[80vh] bg-cover bg-center"
-                style={{ backgroundImage: `url(${HeroImage})` }}
-                >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-[#7A7D47] via-silver"></div>
-                <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
-                    <div className='flex flex-col items-center'>
+  // State to track image loading errors
+  const [imageErrors, setImageErrors] = useState({
+    hero: false,
+    section1: false,
+    section2: false,
+    project1: false,
+    project2: false,
+    project3: false,
+    section3: false,
+  })
+  const navigate = useNavigate()
+  // Handle image error function
+  const handleImageError = (imageKey) => {
+    setImageErrors((prev) => ({
+      ...prev,
+      [imageKey]: true,
+    }))
+  }
 
-                    <p>Unite, Serve, Strengthen Together </p>
-                    <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">
-                            OGIDI UNION ADVANCEMENT FORUM
-                    </h1>
-                    <p>Advancing Ogidi's Growth Together</p>
-
-                    </div>
-                </div>
-                </div>
-                {/* Section 2 */}
-                <div className='flex-col min-w-full flex md:flex-row justify-center mt-16 md:gap-32 mx-3'>
-
-                    <img src={Section1Image}  className='w-92 border-8 border-slate-300'/>
-
-                    <div className='flex-wrap flex flex-col md:max-w-4/12 items-start'>
-                        <p className='mt-7'> our Purpose</p>
-                        <h1 className='text-4xl whitespace-normal font-bold'>
-                        We Are Driven By Shared Committment
-                        </h1>
-
-                        <p className='font-extralight text-lg'>
-                        We envision a connected and prosperous Ogidi where every member contributes to and benefits from the community's growth. Our mission is to bring people together to support initiatives that promote sustainable sustainable security and infrastructural development, cultural preservation and social well-being.
-                        </p>
-
-
-                        <button className='bg-[#7A7D47] px-4 py-4 text-white flex items-center'>LEARN MORE ABOUT US</button>
-
-                    </div>
-
-                    
-
-                </div>
-                {/* Section 3 */}
-
-
-                <div className='mt-16 md:flex'>
-                    <div className='md:min-w-[65%] bg-[#EAEAE8] md:flex flex-col items-center p-8 text-center'>
-                            <h1 className='text-4xl'>Mission Statement</h1>
-                            <p className='text-sm font-extralight'>
-                                To foster peace and security, empower infrastructural development, and inspire unity and progress in Ogidi through collaborative efforts, innovative solutions, and unwavering commitment to the well-being of our community.
-                                </p>
-                        
-
-                    </div>  
-
-                    <div className='bg-[#FCD6D3] w-full p-8 flex flex-col items-center text-center'>
-                            <h1 className='text-6xl w-2/3 font-extralight'>Take A pledge</h1>
-                            <button className='border px-4 py-2'>
-                                Support Us
-                            </button>
-                    </div>
-
-                    
-                </div>
-                    {/* Section 4 */}
-                <div className='md:flex'>
-                    <div className='md:min-w-[65%] bg-[#DFDFDF] flex flex-col items-center p-4 text-center'>
-                            <h1 className='text-4xl'>Vision Statement</h1>
-                            <p className='text-sm font-extralight'>
-                            To build a resilient and prosperous Ogidi, where security, infrastructure, and opportunities thrive, reflecting the collective aspirations of its people.
-                                </p>
-                        
-
-                    </div>  
-
-                    <div className='bg-[#FFF5F4] w-full p-4 flex flex-col items-center text-center'>
-                            <h1 className='text-6xl w-2/3 font-extralight'>Photos & Videos</h1>
-                            <button className='border px-4 py-2'>
-                                Support Us
-                            </button>
-                    </div>
-                </div>
-
-                <div className='mt-8 bg-[#FEFFE5] md:flex justify-center py-8 px-3'>
-                    <div className='md:max-w-[50%]'>
-                    <div className='max-w-[80%]'>
-                    <p>Project</p>
-                    <h1 className='text-2xl'>The Blueprint for Progress</h1>
-                    <div className='overflow-hidden'>
-                        <img src={Sesion2Image} className='object-contain' />
-
-                    </div>
-                    <p className='font-bold'>
-                    Installation of Street Lights
-                    </p>
-                    <p className='font-extralight leading-loose'>
-                    Let us light up Ogidi! Streetlights will not only beautify our community but also enhance security, encourage nightlife activities, and boost commerce in every corner of our town.
-
-                    </p>
-                    </div>
-                    </div>
-
-                    <div>
-                        <button className='bg-[#7A7D47] text-white p-4 px-7'>
-                            SEE ALL PROJECT
-                        </button>
-
-                        <div className='mt-16'>
-                            
-                        <div className='border-b flex gap-6 py-6'>
-                            <img src={Project1Image} />
-                           <div>
-                           <p className='text-[1.2rem]'>Road Construction and Maintenance, Including Drainage Systems:</p>
-                            <p>
-                            Smooth, durable roads with functional drainage systems are the backbone of any thriving community. ..Read This
-                            </p>
-                           </div>
-                        </div>
-
-
-                        <div className='border-b flex gap-6 py-6'>
-                            <img src={Project2Image} />
-                           <div>
-                           <p className='text-[1.2rem]'>Road Construction and Maintenance, Including Drainage Systems:</p>
-                            <p>
-                            Smooth, durable roads with functional drainage systems are the backbone of any thriving community. ..Read This
-                            </p>
-                           </div>
-                        </div>
-
-
-                        <div className='border-b flex gap-6 py-6'>
-                            <img src={Project3Image} />
-                           <div>
-                           <p className='text-[1.2rem]'>Road Construction and Maintenance, Including Drainage Systems:</p>
-                            <p>
-                            Smooth, durable roads with functional drainage systems are the backbone of any thriving community. ..Read This
-                            </p>
-                           </div>
-                        </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div className="w-full mt-16 px-5">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-    {/* Left Section - Title & Image */}
-    <div className="space-y-4">
-      <p className="text-gray-600">EVENTS/NEWS</p>
-      <h1 className="font-bold text-3xl">Ogidi Summit 2024</h1>
-      <img src={Section3} alt="Ogidi Summit" className="w-full rounded-lg shadow-md" />
+  // Avatar fallback component
+  const AvatarFallback = ({ icon: Icon, size = 24, className = "" }) => (
+    <div className={`flex items-center justify-center bg-gray-200 ${className}`}>
+      <Icon size={size} className="text-gray-500" />
     </div>
+  )
 
-    {/* Right Section - Details & Button */}
-    <div className="space-y-6">
-      <h2 className="text-2xl font-semibold">Ogidi Summit 2024: News and Updates</h2>
-      <p className="font-extralight">
-        The 2024 edition of the Ogidi Summit is set to be a transformative event, scheduled for 
-        <strong> 14th September 2024</strong> at <strong>Leophine Residency Hotel, Ogidi</strong>.
-      </p>
-      <p className="font-extralight">
-        Established as an annual platform, the Ogidi Summit addresses key issues affecting the 
-        community. It brings together stakeholders, leaders, and residents to deliberate and propose 
-        strategies for sustainable development. Since its inception, the Summit has fostered unity, 
-        tackling challenges such as insecurity, inadequate infrastructure, and youth empowerment.
-      </p>
-      <button className="px-5 py-2 text-white bg-[#7A7D47] rounded-md shadow-md hover:bg-[#6a6d40]">
-        Explore More
-      </button>
-    </div>
+  return (
+    <div className="min-h-screen">
+      <Navbar />
 
-  </div>
-    <ExecutiveMembers />
-
-    <GetStarted />
-</div>
-
+      {/* Hero Section - Redesigned with black background and image on right */}
+      <div className="bg-black text-white">
+        <div className="container mx-auto px-4 py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              {/* <p className="text-black font-medium tracking-wider">UNITE, SERVE, STRENGTHEN TOGETHER</p> */}
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">OGIDI UNION ADVANCEMENT FORUM</h1>
+              <p className="text-xl text-gray-300">Advancing Ogidi's Growth Together</p>
+              <div className="pt-4 flex space-x-4">
+                <button className="bg-black hover:bg-black px-6 py-3 rounded font-medium flex items-center gap-2 cursor-pointer" onClick={() => navigate("/new-user")}>
+                  JOIN US <FaArrowRight size={16} />
+                </button>
+                <button className="border border-white hover:bg-white/10 px-6 py-3 rounded font-medium">
+                  LEARN MORE
+                </button>
+              </div>
             </div>
-      <Footer />
-
+            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+              {imageErrors.hero ? (
+                <AvatarFallback icon={FaBuilding} size={120} className="absolute inset-0 w-full h-full" />
+              ) : (
+                <img
+                  src={HeroImage || "/placeholder.svg"}
+                  alt="Ogidi Union"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={() => handleImageError("hero")}
+                />
+              )}
+            </div>
+          </div>
         </div>
-    );
-};
+      </div>
 
-export default Home;
+      {/* Section 2 - Our Purpose */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            {imageErrors.section1 ? (
+              <AvatarFallback
+                icon={FaUserCircle}
+                size={100}
+                className="w-full h-[300px] border-8 border-slate-300 shadow-lg"
+              />
+            ) : (
+              <img
+                src={Section1Image || "/placeholder.svg"}
+                alt="Our Purpose"
+                className="w-full h-auto border-8 border-slate-300 shadow-lg"
+                onError={() => handleImageError("section1")}
+              />
+            )}
+          </div>
+          <div className="space-y-6 order-1 md:order-2">
+            <p className="text-black font-medium tracking-wider">OUR PURPOSE</p>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">We Are Driven By Shared Commitment</h2>
+            <p className="text-gray-700 text-lg">
+              We envision a connected and prosperous Ogidi where every member contributes to and benefits from the
+              community's growth. Our mission is to bring people together to support initiatives that promote
+              sustainable security and infrastructural development, cultural preservation and social well-being.
+            </p>
+            <button onClick={() => navigate("/about")}className="cursor-pointer bg-black hover:bg-black px-6 py-4 text-white font-medium flex items-center gap-2 rounded">
+              LEARN MORE ABOUT US <FaArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mission & Vision Statements */}
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-8">
+        <div className="bg-[#EAEAE8] col-span-2 p-12 flex flex-col items-center justify-center text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Mission Statement</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            To foster peace and security, empower infrastructural development, and inspire unity and progress in Ogidi
+            through collaborative efforts, innovative solutions, and unwavering commitment to the well-being of our
+            community.
+          </p>
+        </div>
+        <div className="bg-[#FCD6D3] p-12 flex flex-col items-center justify-center text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-6">Take A Pledge</h2>
+          <button className="border border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded">
+            Support Us
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="bg-[#DFDFDF] col-span-2 p-12 flex flex-col items-center justify-center text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Vision Statement</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            To build a resilient and prosperous Ogidi, where security, infrastructure, and opportunities thrive,
+            reflecting the collective aspirations of its people.
+          </p>
+        </div>
+        <div className="bg-[#FFF5F4] p-12 flex flex-col items-center justify-center text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-6">Photos & Videos</h2>
+          <button onClick ={() => navigate("/gallary")}className="cursor-pointer border border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded">
+            View Gallery
+          </button>
+        </div>
+      </div>
+
+      {/* Projects Section */}
+      <div className="bg-[#FEFFE5] py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <p className="text-black font-medium tracking-wider">PROJECTS</p>
+              <h2 className="text-3xl font-bold">The Blueprint for Progress</h2>
+              <div className="overflow-hidden rounded-lg shadow-lg">
+                {imageErrors.section2 ? (
+                  <AvatarFallback icon={FaLightbulb} size={80} className="w-full h-[250px]" />
+                ) : (
+                  <img
+                    src={Sesion2Image || "/placeholder.svg"}
+                    alt="Street Lights Project"
+                    className="w-full h-auto"
+                    onError={() => handleImageError("section2")}
+                  />
+                )}
+              </div>
+              <h3 className="text-xl font-bold">Installation of Street Lights</h3>
+              <p className="text-gray-700">
+                Let us light up Ogidi! Streetlights will not only beautify our community but also enhance security,
+                encourage nightlife activities, and boost commerce in every corner of our town.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex justify-end">
+                <button className="bg-black hover:bg-black text-white px-8 py-4 font-medium rounded">
+                  SEE ALL PROJECTS
+                </button>
+              </div>
+
+              <div className="space-y-6 mt-8">
+                {/* Project 1 */}
+                <div className="flex gap-6 p-4 border-b border-gray-300 hover:bg-white/50 transition-colors">
+                  {imageErrors.project1 ? (
+                    <AvatarFallback icon={FaRoad} size={40} className="w-24 h-24 rounded" />
+                  ) : (
+                    <img
+                      src={Project1Image || "/placeholder.svg"}
+                      alt="Road Construction"
+                      className="w-24 h-24 object-cover rounded"
+                      onError={() => handleImageError("project1")}
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-lg font-semibold">
+                      Road Construction and Maintenance, Including Drainage Systems
+                    </h3>
+                    <p className="text-gray-700 mt-2">
+                      Smooth, durable roads with functional drainage systems are the backbone of any thriving community.
+                      <a href="#" className="text-black font-medium ml-1 hover:underline">
+                        Read More
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Project 2 */}
+                <div className="flex gap-6 p-4 border-b border-gray-300 hover:bg-white/50 transition-colors">
+                  {imageErrors.project2 ? (
+                    <AvatarFallback icon={FaUsers} size={40} className="w-24 h-24 rounded" />
+                  ) : (
+                    <img
+                      src={Project2Image || "/placeholder.svg"}
+                      alt="Project 2"
+                      className="w-24 h-24 object-cover rounded"
+                      onError={() => handleImageError("project2")}
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-lg font-semibold">Community Development Initiatives</h3>
+                    <p className="text-gray-700 mt-2">
+                      Building a stronger community through collaborative development projects and local empowerment.
+                      <a href="#" className="text-black font-medium ml-1 hover:underline">
+                        Read More
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Project 3 */}
+                <div className="flex gap-6 p-4 border-b border-gray-300 hover:bg-white/50 transition-colors">
+                  {imageErrors.project3 ? (
+                    <AvatarFallback icon={FaGraduationCap} size={40} className="w-24 h-24 rounded" />
+                  ) : (
+                    <img
+                      src={Project3Image || "/placeholder.svg"}
+                      alt="Project 3"
+                      className="w-24 h-24 object-cover rounded"
+                      onError={() => handleImageError("project3")}
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-lg font-semibold">Youth Empowerment Programs</h3>
+                    <p className="text-gray-700 mt-2">
+                      Investing in the future of Ogidi through education, skills training, and mentorship for our youth.
+                      <a href="#" className="text-black font-medium ml-1 hover:underline">
+                        Read More
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Events/News Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Left Section - Title & Image */}
+          <div className="space-y-6">
+            <p className="text-black font-medium tracking-wider">EVENTS/NEWS</p>
+            <h2 className="text-3xl font-bold">Ogidi Summit 2024</h2>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              {imageErrors.section3 ? (
+                <AvatarFallback icon={FaImage} size={80} className="w-full h-[250px]" />
+              ) : (
+                <img
+                  src={Section3 || "/placeholder.svg"}
+                  alt="Ogidi Summit"
+                  className="w-full h-auto"
+                  onError={() => handleImageError("section3")}
+                />
+              )}
+            </div>
+          </div>
+
+          {/* Right Section - Details & Button */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold">Ogidi Summit 2024: News and Updates</h3>
+            <p className="text-gray-700">
+              The 2024 edition of the Ogidi Summit is set to be a transformative event, scheduled for
+              <strong> 14th September 2024</strong> at <strong>Leophine Residency Hotel, Ogidi</strong>.
+            </p>
+            <p className="text-gray-700">
+              Established as an annual platform, the Ogidi Summit addresses key issues affecting the community. It
+              brings together stakeholders, leaders, and residents to deliberate and propose strategies for sustainable
+              development. Since its inception, the Summit has fostered unity, tackling challenges such as insecurity,
+              inadequate infrastructure, and youth empowerment.
+            </p>
+            <button className="px-6 py-3 text-white bg-black hover:bg-black rounded shadow-md flex items-center gap-2">
+              Explore More <FaArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Executive Members Section */}
+      <ExecutiveMembers />
+
+      {/* Get Started Section */}
+      <GetStarted />
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  )
+}
+
+export default Home
+

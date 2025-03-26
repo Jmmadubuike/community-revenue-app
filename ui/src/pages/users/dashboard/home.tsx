@@ -137,7 +137,7 @@ const UserDashBoard = () => {
                                 onClick={copyToClipboard} 
                                 type="primary" 
                                 icon={<FaCopy />} 
-                                className="m bg-[#7A7D47]">
+                                className="m bg-black">
                                 Copy
                             </Button>
                         </div>
@@ -151,7 +151,7 @@ const UserDashBoard = () => {
                     </ul>
                     <Button 
                         onClick={() => setIsModalOpen(true)} 
-                        className="my-6 bg-[#7A7D47] text-white py-4">
+                        className="my-6 bg-black text-white py-4">
                         Upload Proof of Payment
                     </Button>
                 </div>

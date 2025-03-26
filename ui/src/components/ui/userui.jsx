@@ -25,12 +25,12 @@ const UserUI = ({ children }) => {
               onClick={() => navigate(url)}
               className="flex items-center gap-3 px-4 py-2 text-left text-sm font-medium w-full hover:bg-gray-800 transition duration-200"
             >
-              <Icon size={22} className="text-[#7A7D47]" />
+              <Icon size={22} className="text-black" />
               <span>{label}</span>
             </button>
           ))}
           <button className="flex mt-16 bg-slate-900 items-center gap-3 px-4 py-2 text-left text-sm font-medium w-full hover:bg-gray-800 transition duration-200">
-            <FaSignOutAlt size={22} className="text-[#7A7D47]" />
+            <FaSignOutAlt size={22} className="text-black" />
             <span>Logout</span>
           </button>
         </nav>

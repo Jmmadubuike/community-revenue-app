@@ -3,9 +3,11 @@ import HeroImage from "../assets/contact-page-hero.png"
 import GetStarted from "../components/getStarted"
 import { FaPlay } from "react-icons/fa"
 import Gallary1 from "../assets/gallary1.png"
-import Gallary2 from "../assets/gallary2.png"
-import Gallary3 from "../assets/gallary3.png"
-import Gallary4 from "../assets/gallary4.png"
+import Gallary2 from "../assets/gallary2.jpg"
+import Gallary3 from "../assets/gallary3.jpg"
+import Gallary4 from "../assets/gallary4.jpg"
+import Gallary5 from "../assets/gallary1.jpg"
+
 import Footer from "../components/common/footer"
  const GallaryPage = () => {
 
@@ -18,15 +20,15 @@ import Footer from "../components/common/footer"
         <div>
              <div
             className="relative h-[80vh] bg-cover bg-center"
-            style={{ backgroundImage: `url(${HeroImage})` }}
+            style={{ backgroundImage: `url(${Gallary4})` }}
             >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-[#7A7D47] via-silver"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
             <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
                 <div className='flex flex-col items-center'>
 
-                <p>Unite, Serve, Strengthen Ogidi Together </p>
-                <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">
-                Gallary
+                {/* <p>Unite, Serve, Strengthen Ogidi Together </p> */}
+                <h1 className="text-4xl md:text-6xl font-bold">
+                Our Gallary
                 </h1>
 
                 </div>
@@ -89,8 +91,8 @@ import Footer from "../components/common/footer"
         {/* Video Banner */}
         <div className="w-full rounded-lg overflow-hidden">
           <div className="relative">
-            <video
-             src={"https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"}
+            <img
+             src={Gallary5}
               alt="Cultural video"
               className="w-full h-48 sm:h-64 object-cover"
             />

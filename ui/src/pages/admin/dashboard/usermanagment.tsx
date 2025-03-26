@@ -34,7 +34,7 @@ const AdminUserManagement = () => {
                 <div className='mt-8 max-w-full overflow-x-hidden'>
                     <div className="flex items-center justify-between">
                     <h1 className='2xl font-semibold my-2'>User Management</h1>
-                    <a type="submit" href='/new-user' className="justify-center w-26 bg-[#7A7D47] text-white py-3 rounded cursor-pointer text-center">
+                    <a type="submit" href='/new-user' className="justify-center w-26 bg-black text-white py-3 rounded cursor-pointer text-center">
               + New User
             </a>
                     </div>

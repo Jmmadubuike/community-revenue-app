@@ -211,7 +211,7 @@ const UpcomingPage = () => {
 
         <Input.TextArea placeholder="Notes" className="mb-8 p-4" value={duesData.notes} onChange={(e) => setDuesData({ ...duesData, notes: e.target.value })} />
 
-        <Button type="primary" className="w-full p-5 bg-[#7A7D47]" onClick={handleAddDues}>Save</Button>
+        <Button type="primary" className="w-full p-5 bg-black" onClick={handleAddDues}>Save</Button>
       </Modal>
 
         {/* Event Modal */}
@@ -225,7 +225,7 @@ const UpcomingPage = () => {
           <DatePicker showTime placeholder="Date & Time" className="mb-2 w-full p-3 mt-5" onChange={(date) => setEventData({ ...eventData, dateTime: date })} />
           <Input placeholder="Venue" className="mb-2 p-4" value={eventData.venue} onChange={(e) => setEventData({ ...eventData, venue: e.target.value })} />
           <Input.TextArea placeholder="Notes" className="mb-2" value={eventData.notes} onChange={(e) => setEventData({ ...eventData, notes: e.target.value })} />
-          <Button type="primary" className="w-full p-5   bg-[#7A7D47]" onClick={handleAddEvent}>Save</Button>
+          <Button type="primary" className="w-full p-5   bg-black" onClick={handleAddEvent}>Save</Button>
         </Modal>
       </div>
     </AdminUI>

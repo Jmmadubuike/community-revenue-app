@@ -85,7 +85,7 @@ function IdnLoginPage() {
           </div>
 
           <div className="my-2">
-            <button type="submit" className="w-full bg-[#7A7D47] text-white py-3 rounded cursor-pointer">
+            <button type="submit" className="w-full bg-black text-white py-3 rounded cursor-pointer">
               Login
             </button>
           </div>

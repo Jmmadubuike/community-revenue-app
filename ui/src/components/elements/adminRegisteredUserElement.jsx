@@ -79,11 +79,6 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
             key: "age_grade",
         },
         {
-            title: "Kindred",
-            dataIndex: "kindred",
-            key: "kindred",
-        },
-        {
             title: "Status",
             dataIndex: "is_active",
             key: "is_active",
@@ -155,9 +150,7 @@ const AdminRegisteredUserElement = ({ limit, offset }) => {
                         <Input />
                     </Form.Item>
 
-                    <Form.Item name="kindred" label="Kindred">
-                        <Input />
-                    </Form.Item>
+                   
                     <Form.Item name="idn" label="IDN">
                         <Input disabled />
                     </Form.Item>

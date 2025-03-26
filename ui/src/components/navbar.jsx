@@ -19,18 +19,18 @@ const Navbar = () => {
                     <a href="/about" className="flex items-center hover:text-gray-600">About</a>
                     <a href="/project" className="flex items-center hover:text-gray-600">Projects</a>
                     <a href="/executive" className="flex items-center hover:text-gray-600">Executive</a>
-                    <a href="/contact" className="flex items-center hover:text-gray-600">Contact</a>
+                    <a href="/contact" className="flex items-center hover:text-gray-600">Contact Us</a>
                     <a href="/gallary" className="flex items-center hover:text-gray-600">Gallery</a>
                 </div>
                 <div className="hidden md:flex space-x-4">
                     <button 
-                        className="cursor-pointer bg-transparent text-black px-4 py-2 border-[#7A7D47] border-2 flex items-center" 
+                        className="cursor-pointer bg-transparent text-black px-4 py-2 border-black border-2 flex items-center" 
                         onClick={() => navigate("/user/login")}
                     >
                         <FaSignInAlt className="mr-2" /> Login
                     </button>
                     <button 
-                        className="cursor-pointer px-4 py-2 text-white bg-[#7A7D47] flex items-center"
+                        className="cursor-pointer px-4 py-2 text-white bg-black flex items-center"
                         onClick={() => navigate("/new-user")}
                     >
                         <FaUserPlus className="mr-2" /> Get Started
@@ -48,12 +48,12 @@ const Navbar = () => {
                         <a href="/about" className="flex items-center hover:text-gray-600"> About</a>
                         <a href="/project" className="flex items-center hover:text-gray-600"> Projects</a>
                         <a href="/executive" className="flex items-center hover:text-gray-600">Executive</a>
-                        <a href="/contact" className="flex items-center hover:text-gray-600"> Contact</a>
+                        <a href="/contact" className="flex items-center hover:text-gray-600"> Contact Us</a>
                         <a href="/gallary" className="flex items-center hover:text-gray-600">Gallery</a>
-                        <a className="cursor-pointer bg-transparent text-black px-4 py-2 border-[#7A7D47] border-2 flex items-center" href="/user/login">
+                        <a className="cursor-pointer bg-transparent text-black px-4 py-2 border-black border-2 flex items-center" href="/user/login">
                             <FaSignInAlt className="mr-2" /> Login
                         </a>
-                        <a className="cursor-pointer px-4 py-2 text-white bg-[#7A7D47] flex items-center" href="/new-user">
+                        <a className="cursor-pointer px-4 py-2 text-white bg-black flex items-center" href="/new-user">
                             <FaUserPlus className="mr-2" /> Get Started
                         </a>
                     </div>
