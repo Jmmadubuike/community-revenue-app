@@ -187,7 +187,7 @@ const NewUserForm = () => {
                            </div>
                            <div>
                            <label className="block text-sm font-medium text-gray-700">Marital status</label>
-                            <select name="gender" value={formData.marital_status} onChange={handleChange} required className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
+                            <select name="marital_status" value={formData.marital_status} onChange={handleChange} required className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
                             <option value="single">Single</option>
                             <option value="married">Married</option>
                             <option value="divorced">Divorced</option>
