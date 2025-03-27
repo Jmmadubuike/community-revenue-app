@@ -33,28 +33,29 @@ type ExecutiveMember = {
 // Create an array of executive members data
 const executiveMembers: ExecutiveMember[] = [
   {
-    name: "Dr. Emeka Onyido (Onosoleze)",
+    name: "Prince Emeka Onyido (Onosoleze)",
     title: "High Chief",
     position: "Chairman",
     location: "Ohuozoma",
     image: EmakaOnyido,
   },
-  {
-    name: "Rotuu Odi-Okoye (Igiligi)",
-    title: "High Chief Barr.",
-    position: "1st Vice Chairman",
-    location: "Ogboli",
-    image: Obiokoye,
-  },
+  
   {
     name: "Stephen  Ibegbu (Omelora)",
     title: "High Chief",
-    position: "2nd Vice Chairman",
+    position: "Vice Chairman (Admin)",
     location: "Ohuocha",
     image: Omelora,
   },
   {
-    name: "Chike Maduagwuna, (Ugolue)",
+    name: "Ifeatu Obi-Okoye (Igiligi)",
+    title: "High Chief Sir Barr.",
+    position: "Vice Chairman (Operations)",
+    location: "Ogboli",
+    image: Obiokoye,
+  },
+  {
+    name: "Chike Maduagwuna (Ugolue)",
     title: "Chief Sir",
     position: "Secretary",
     location: "Ilogwuta",
@@ -67,19 +68,20 @@ const executiveMembers: ExecutiveMember[] = [
     location: "",
     image: Chekwube,
   },
+  
   {
-    name: "Okey Amobi. (ObaEgo)",
-    title: "Chief (Engr).",
-    position: "Member",
-    location: "",
-    image: ObaEgo,
-  },
-  {
-    name: "Dr. Tony Meka",
+    name: "Dr. Tony Meka (Ochendo)",
     title: "High Chief",
     position: "Member",
     location: "Ohuocha",
     image: Ochendu,
+  },
+  {
+    name: "Okey Amobi \n (Oba-Ego)",
+    title: "Chief (Engr.)",
+    position: "Member",
+    location: "",
+    image: ObaEgo,
   },
   {
     name: "Obum Osakwe Ph.D (Ezeudo)",
@@ -131,8 +133,8 @@ const executiveMembers: ExecutiveMember[] = [
     image: Ezeugo,
   },
   {
-    name: "Humphrey Udemezue (Akadike Ogidi)",
-    title: "Chief Engr.",
+    name: "Humphrey Udemezue (Akadike)",
+    title: "Chief ( Engr.)",
     position: "Member",
     location: "Umueri",
     image: Akadike,
@@ -152,14 +154,14 @@ const executiveMembers: ExecutiveMember[] = [
     image: Achebe,
   },
   {
-    name: " Chris Obi Okafor",
+    name: " Chris Obi Okafor  (Civilian General/Ogidi Youth President)",
     title: "Hon",
     position: "Member",
     location: "",
     image: Okafor,
   },
   {
-    name: "Vincent Obi  (Ezeudo Ogidi)",
+    name: "Vincent Obi  (Ezeudo)",
     title: "Chief",
     position: "Member",
     location: "Iruofu Ogidi",
@@ -187,7 +189,7 @@ const executiveMembers: ExecutiveMember[] = [
   //   image: "https://via.placeholder.com/100",
   // },
   {
-    name: "Ubakanma Anthony (People)",
+    name: " Anthony Ubakanma (Ubakanma)",
     title: "Comrade  Chief",
     position: "Member",
     location: "Umueri",
@@ -232,7 +234,7 @@ const ExecutiveMembers = () => {
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     onError={() => handleImageError(index)}
                   />
                 )}

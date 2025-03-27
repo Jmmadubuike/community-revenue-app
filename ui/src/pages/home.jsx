@@ -6,8 +6,10 @@ import Section1Image from "../assets/section-img.jpeg"
 import Sesion2Image from "../assets/sesion2-img.png"
 import Project1Image from "../assets/project1.png"
 import Project2Image from "../assets/project2.png"
-import Project3Image from "../assets/project3.png"
-import Section3 from "../assets/section-3.png"
+import Project3Image from "../assets/project3.jpg"
+import Section3 from "../assets/section-3.jpg"
+import StreetLight from "../assets/street-light.jpg"
+
 import ExecutiveMembers from "../components/members"
 import GetStarted from "../components/getStarted"
 import Footer from "../components/common/footer"
@@ -78,7 +80,7 @@ const Home = () => {
                 <AvatarFallback icon={FaBuilding} size={120} className="absolute inset-0 w-full h-full" />
               ) : (
                 <img
-                  src={HeroImage || "/placeholder.svg"}
+                  src={Section1Image || "/placeholder.svg"}
                   alt="Ogidi Union"
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={() => handleImageError("hero")}
@@ -101,7 +103,7 @@ const Home = () => {
               />
             ) : (
               <img
-                src={Section1Image || "/placeholder.svg"}
+                src={HeroImage || "/placeholder.svg"}
                 alt="Our Purpose"
                 className="w-full h-auto border-8 border-slate-300 shadow-lg"
                 onError={() => handleImageError("section1")}
@@ -169,7 +171,7 @@ const Home = () => {
                   <AvatarFallback icon={FaLightbulb} size={80} className="w-full h-[250px]" />
                 ) : (
                   <img
-                    src={Sesion2Image || "/placeholder.svg"}
+                    src={StreetLight || "/placeholder.svg"}
                     alt="Street Lights Project"
                     className="w-full h-auto"
                     onError={() => handleImageError("section2")}

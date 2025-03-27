@@ -9,7 +9,7 @@ import Footer from "../components/common/footer"
  const ContactPage = () => {
 
     const [formData, setState] = useState({
-        firstName: "John",
+        firstName: "",
         lastName: "",
         email: "",
         phone: "",
@@ -69,18 +69,40 @@ import Footer from "../components/common/footer"
             <div className="flex items-start">
               <FaMap className=" mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
               <p className="text-gray-800">
-                <span>Ogidi Town Hall, Skill Acquisition Block,</span>
-                Ogidi, Anambra State,
-                <br />
-                Nigeria
+              1st  Floor, Ogidi Skill Acquisition Block, Ogidi Town Hall,
+              Ogidi, Anambra State, Nigeria
               </p>
+
             </div>
 
             <div className="flex items-center">
               <FaPhone className=" mr-3 h-5 w-5 flex-shrink-0" />
-              <a href="tel:+12346789108" className="text-gray-800">
+              <div>
+                <a href="tel:+12346789108" className="text-gray-800">
                 +2349069627839
               </a>
+     
+              </div>
+            </div>
+
+            <div className="flex items-center">
+              <FaPhone className=" mr-3 h-5 w-5 flex-shrink-0" />
+              <div>
+                <a href="tel:+12346789108" className="text-gray-800">
+                +2348067599966
+              </a>
+     
+              </div>
+            </div>
+
+            <div className="flex items-center">
+              <FaPhone className=" mr-3 h-5 w-5 flex-shrink-0" />
+              <div>
+                <a href="tel:+12346789108" className="text-gray-800">
+                +2348033904162
+              </a>
+     
+              </div>
             </div>
 
             <div className="flex items-center">
@@ -182,14 +204,23 @@ import Footer from "../components/common/footer"
             {/* Address */}
             <div className="flex items-start gap-3">
               <FaMap className="text-purple-600 mt-1 flex-shrink-0" size={20} />
-              <p className="text-gray-800">Ogidi Town Hall, Skill Acquisition Block, Ogidi, Anambra State, Nigeria</p>
+              <p className="text-gray-800">
+              1st  Floor, Ogidi Skill Acquisition Block, Ogidi Town Hall,
+              Ogidi, Anambra State, Nigeria
+              </p>
             </div>
 
             {/* Phone */}
-            <div className="flex items-center gap-3">
+              <div className="flex gap-2">
               <FaPhone className="text-purple-600 flex-shrink-0" size={20} />
-              <p className="text-gray-800">08056599725</p>
+            <div className="flex items-center gap-3">
+              <div>
+              <p className="text-sm  mb-1">Phone 1: +2349069627839</p>
+          <p className="text-sm  mb-1">Phone 2: +2348067599966</p>
+          <p className="text-sm  mb-1">Phone 3: +2348033904162</p>
+              </div>
             </div>
+              </div>
 
             {/* Email */}
             <div className="flex items-center gap-3">

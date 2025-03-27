@@ -9,8 +9,8 @@ const Footer = () => {
             <Logo />
           </div>
           <h3 className="font-semibold  mb-2">Contact Information</h3>
-          <p className="text-sm  mb-1">Ogidi Town Hall, Skill Acquisition Block,</p>
-          <p className="text-sm  mb-1">Ogidi, Anambra State,Nigeria</p>
+          <p className="text-sm  mb-1">1st  Floor, Ogidi Skill Acquisition Block, Ogidi Town Hall,</p>
+          <p className="text-sm  mb-1">Ogidi, Anambra State, Nigeria</p>
           <p className="text-sm  mb-1">Phone 1: +2349069627839</p>
           <p className="text-sm  mb-1">Phone 2: +2348067599966</p>
           <p className="text-sm  mb-1">Phone 3: +2348033904162</p>

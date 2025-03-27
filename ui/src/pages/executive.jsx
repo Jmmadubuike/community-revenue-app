@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import Navbar from "../components/navbar"
-import HeroImage from "../assets/contact-page-hero.png"
+import HeroImage from "../assets/igwe-in-cancel.jpg"
 import Footer from "../components/common/footer"
 // PaginationIndicator component included in the same file
 const PaginationIndicator = ({ totalPages, currentPage }) => {
@@ -38,7 +38,7 @@ const ExecutivesPage = () => {
         "NAMES OF CANDIDATES FOR INAUGURATION/SWEARING INTO THE RECONSTITUTED IGWE-IN-COUNCIL (MARCH 16 - 2024)",
       sections: [
         {
-          title: "AMAKOM",
+          title: "AKANANO",
           members: [
             { position: "Chief", name: "Arinze Nweke (Ezeani)" },
             { position: "Chief", name: "Augustine Ekwunife" },
@@ -108,7 +108,7 @@ const ExecutivesPage = () => {
     if (currentPage === 0) {
       return (
         <div className="mt-11 md:px-16">
-          <h1 className="text-2xl font-bold text-center text-slate-800">{page.title}</h1>
+          <h1 className="text-lg font-bold text-center text-slate-800">{page.title}</h1>
           <p className="text-center mb-6">Below is the list of members of Ogidi Union Nigeria:</p>
 
           <div className="space-y-3 max-w-3xl mx-auto">
@@ -123,7 +123,7 @@ const ExecutivesPage = () => {
     } else if (currentPage === 1) {
       return (
         <div className="mt-11 md:px-16">
-          <h1 className="text-2xl font-bold text-center text-slate-800">{page.title}</h1>
+          <h1 className="text-lg font-bold text-center text-slate-800">{page.title}</h1>
           <p className="text-center mb-6 max-w-3xl mx-auto">{page.subtitle}</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -165,7 +165,7 @@ const ExecutivesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
           <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
             <div className="flex flex-col items-center">
-              <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">{pages[currentPage].title}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold">{pages[currentPage].title}</h1>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/navbar';
-import HeroImage from "../assets/projectPageHero.jpg"
+import HeroImage from "../assets/oguwansike.jpg"
 import GetStarted from '../components/getStarted'
 import ProjectImage1 from "../assets/project-page-1.png"
 import ProjectImage2 from "../assets/project-page-2.png"
@@ -16,7 +16,7 @@ const ProjectPage = () => {
                 {/* Section 1 */}
                     <div
                 className="relative h-[80vh] bg-cover bg-center"
-                style={{ backgroundImage: `url(${ProjectImage1})` }}
+                style={{ backgroundImage: `url(${HeroImage})` }}
                 >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
                 <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
@@ -24,7 +24,7 @@ const ProjectPage = () => {
 
                     {/* <p>Unite, Serve, Strengthen Together </p> */}
                     <h1 className="text-4xl md:text-6xl font-bold max-w-2/3">
-                            Project
+                            Projects
                     </h1>
 
                     </div>
