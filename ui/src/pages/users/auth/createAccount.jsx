@@ -205,7 +205,7 @@ const NewUserForm = () => {
                         <>
                            <div>
                                 <label className="block text-sm font-medium text-gray-700">Level</label>
-                                <select name="level" value={formData.kindred} onChange={handleChange}
+                                <select name="level" value={formData.level} onChange={handleChange}
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
                                     required >
                                     <option value="level_1" disabled>Select Level</option>
