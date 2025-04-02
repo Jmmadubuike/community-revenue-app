@@ -41,7 +41,7 @@ const AdminUI = ({ children }) => {
       <main className="md:ml-60 flex-1 overflow-auto h-screen">
         <div className="sticky top-0 flex items-center gap-2 border-b w-full z-50 border-slate-200 p-5 bg-white shadow">
           <p className="text-lg font-extrabold">{localStorage.getItem("admin_username")}</p>
-          <p className="font-semibold">{">>"}</p>
+          <p className="font-semibold"></p>
         </div>
         <div className="w-full min-h-[80vh] p-4">{children}</div>
       </main>
