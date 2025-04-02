@@ -208,7 +208,7 @@ const NewUserForm = () => {
                                 <select name="level" value={formData.level} onChange={handleChange}
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
                                     required >
-                                    <option value="level_1" disabled>Select Level</option>
+                                    <option disabled>Select Level</option>
 
                                     <option value="level_1">Level 1(General)</option>
                                     <option value="level_2">Level 2 (Bronze)</option>
@@ -228,8 +228,12 @@ const NewUserForm = () => {
                     )}
                     {step === 5 && (
                         <>
-                            <h1>Welcome to Ogigi revenue collection app</h1>
-                            <p>You will receive an email shortly with your login details!</p>
+                           <div className="text-center bg-gray-100 p-6 rounded-2xl border-md max-w-lg mx-auto">
+                            <h1 className="text-2xl font-bold text-gray-800">Welcome to <span className="text-purple-600">OUAF</span></h1>
+                            <p className="text-gray-600 mt-2">Annual Financial Responsibility Collection App</p>
+                            <p className="text-gray-500 mt-4">You will receive an email shortly with your login details!</p>
+                            </div>
+
                         </>
                     )}
                     <div className="flex justify-between mt-4">

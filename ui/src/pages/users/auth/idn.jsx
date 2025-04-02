@@ -64,7 +64,7 @@ function UserLoginPage() {
               value={formData.idn}
               onChange={handleChange}
               className="w-full p-2 border rounded focus:outline-none pr-10"
-              placeholder="Enter your password"
+              placeholder="Enter your IDN Number"
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
