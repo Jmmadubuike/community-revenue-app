@@ -72,7 +72,7 @@ const executiveMembers: ExecutiveMember[] = [
   {
     name: "Dr. Tony Meka (Ochendo)",
     title: "High Chief",
-    position: "Member",
+    position: "Immediate Past Chairman",
     location: "Ohuocha",
     image: Ochendu,
   },
