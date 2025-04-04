@@ -2,7 +2,7 @@
 
 import Navbar from "../components/navbar"
 import HeroImage from "../assets/hero.jpg"
-import Section1Image from "../assets/section-img.jpeg"
+import Section1Image from "../assets/hero.png"
 import Sesion2Image from "../assets/sesion2-img.png"
 import Project1Image from "../assets/project1.png"
 import Project2Image from "../assets/project2.png"
