@@ -113,7 +113,60 @@ const AboutPage = () => {
                             <p className="text-2xl w-2/3">
                             (President-General, Ogidi Union Nigeria)
                             </p>
-                            <p className="text-md">Igwe Onyido was born on 24th November, 1956 in the ancient city of  Kano to the family of late Chief and Mrs Dennis Nwafor Onyido (Okaka  Ogidi) of Uruezealor Village, Ogidi in Idemili North Local Government  Area of Anambra State. The young Alex started his primary education at  Ibo Union Primary School, Kano in 1962. His schooling was disrupted by  the Nigeria Civil War of 1967 to1970. He relocated to the East with his  parents following the war. After the war, he completed his primary  education at Ogbor Primary School, Ogidi in 1971 before attending  Oraukwu Grammar School, Oraukwu between 1971 and 1976. He passed his  West African Senior School Certificate Examination, WASSCE in flying  colours. He graduated as a certified pharmacist from Ahmadu Bello  University, ABU, Zaria in 1982. After his one year internship and  National Youth Service, NYSC, he gained employment into Kano State  Ministry of Health.
+                            <p className="text-md"><b>Chief Hon. Ikwukananne Okoye (Anumili)</b> is a distinguished statesman, a 
+                                    bridge-builder, and a tireless servant of the people, currently serving as the 
+                                    <b>President-General of Ogidi Union Nigeria and Diaspora</b>. With a legacy rooted 
+                                    in service, peace-building, and transformative leadership, Chief Okoye stands as 
+                                    a beacon of hope and progress in Anambra State and beyond. 
+                                    Born in 1968 at Wusasa Hospital, Zaria, to the late Michael and Roseline Okoye, 
+                                    his journey began in humble surroundings but was destined for greatness. He 
+                                    received his primary education at Uru na Akanano Primary School, Ogidi, 
+                                    completing it in 1979, and graduated from Rimi College, Kaduna, in 1984. Driven 
+                                    by a desire to contribute meaningfully to society, he pursued a tertiary education 
+                                    in Business Administration and Management at the prestigious Federal 
+                                    Polytechnic, Oko. 
+                                    <br />
+                                    <br/>
+                                    A man of many parts, Chief Okoye is a <b>renowned farmer, seasoned 
+                                    administrator, and grassroots political leader</b>, having served as a <b>Councillor</b> 
+                                    and <b>Supervisor for Education in Idemili North Local Government Area</b>. He 
+                                    also leads notable social organizations as <b>President of Friends Progressives 
+                                    Club</b> and the <b>Elite Club,</b> further cementing his commitment to community 
+                                    mobilization and development. 
+                                    Revered across Ogidi for his peacemaking prowess, Chief Okoye is widely known 
+                                    for settling long-standing communal disputes, particularly in <b> Uru Ezealor</b>, 
+                                    where his wisdom and diplomacy restored peace and harmony. Under his 
+                                    watchful leadership, Ogidi has witnessed significant infrastructural 
+                                    advancement, including the <b>installation of streetlights</b> from Afor-Igwe to Oye
+                                    Olisa and from Oye-Olisa to Nkwo Eziudo—initiatives that have enhanced safety 
+                                    and aesthetics across the town. 
+                                    He played a pivotal role in the <b>revitalization of the General Hospital, Ogidi </b>, 
+                                    improving facilities and staffing to ensure better healthcare delivery. Deeply 
+                                    compassionate, Chief Okoye has <b>offered scholarships to over 200 pupils</b>, 
+                                    empowering the next generation with education, and has <b>personally covered 
+                                    medical expenses for countless indigent patients</b> in hospitals such as 
+                                    Immaculate Heart Hospital, Ajefo Okwuosa Memorial Hospital, Twinkle Hospital 
+                                    and Maternity, and Emma Obiako Memorial Hospital. 
+                                    <br/>
+                                    <br/>
+                                    His service and impact have earned him numerous accolades, including the 
+                                    <b>Patron Award by Umuada Anambra and Ndi Iyom Association</b>, <b>the Royal 
+                                    Father Award by the Anglican Communion</b>, and the <b>Award of Excellence by 
+                                    Nnamdi Azikiwe University</b> for contributions to industrial relations. Other 
+                                    notable recognitions include the <b>Distinguished Honorary Members' Award 
+                                    by Military Cantonment Officers Mess, Meritorious Award by Igwebuike 
+                                    Age Grade, Patron Award by the National Youth Council of Nigeria, and 
+                                    Excellence Award by the Vigilante Group of Nigeria, Southeast Zone. </b>
+                                    <br/>
+                                    <br/>
+                                    Despite his many roles, Chief Okoye remains deeply grounded in his personal 
+                                    life. A lover of <b>table tennis and avid reader</b>, he believes in continual self
+                                    improvement and draws inspiration from books that challenge and uplift the 
+                                    human spirit. 
+                                    With unwavering vision and an unshakable commitment to his people, <b>Chief 
+                                    Hon. Ikwukananne Okoye (Anumili)</b> continues to inspire a new era of 
+                                    leadership rooted in service, development, and unity. His life is a testament to 
+                                    what is possible when purpose meets passion in the service of humanity.
  
                             </p>
                     </div>

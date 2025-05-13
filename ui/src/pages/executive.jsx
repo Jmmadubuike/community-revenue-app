@@ -23,13 +23,13 @@ const ExecutivesPage = () => {
       title: "Executive Members of Ogidi Union Nigeria (OUN)",
       members: [
         { position: "President General", name: "Chief Hon. Ikwuka Okoye", phone: "08037414407" },
-        { position: "Vice President General", name: "Ichie Chinedu Okeke", phone: "08067894567" },
-        { position: "Secretary General", name: "Chukwuemeka F. Okadigwe", phone: "09065987654" },
-        { position: "Assistant Secretary General", name: "Emeka Buchi Okoro", phone: "07064567890" },
-        { position: "Financial Secretary", name: "Chukwudi Nwankwo", phone: "08034567890" },
-        { position: "Treasurer", name: "Samuel Okonkwor", phone: "08057891234" },
-        { position: "P.R.O.", name: "Boniface Nzekwe", phone: "09087654321" },
-        { position: "Chief Provost", name: "Emeka Okafor", phone: "08034567123" },
+        { position: "Vice President General", name: "Chijioke Ewesiobi Okeke", phone: "08132794099" },
+        { position: "Secretary General", name: " Chukwuemeka C Muoemenam", phone: "08109199996" },
+        { position: "Assistant Secretary General", name: "Chinwendu Frank Obiora", phone: "07061837868" },
+        { position: "Financial Secretary", name: "Chief Chukwubunna Obor", phone: "08035448942" },
+        { position: "Treasurer", name: "Dr. Kenneth Obianagha", phone: " 08032770577" },
+        { position: "P.R.O.", name: " Ikechukwu Achebe", phone: "08063366350" },
+        { position: "Chief Provost", name: "Elochukwu Osondu", phone: "08034274411" },
       ],
     },
     {
@@ -179,7 +179,7 @@ const ExecutivesPage = () => {
         <div className="flex justify-between max-w-3xl mx-auto my-12 px-6">
           <button
             onClick={prevPage}
-            className="bg-[#4A72C0] hover:bg-[#3A62B0] text-white px-6 py-2 rounded-md flex items-center"
+            className="bg-amber-800 text-white px-6 py-2 rounded-md flex items-center"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path
@@ -192,7 +192,7 @@ const ExecutivesPage = () => {
           </button>
           <button
             onClick={nextPage}
-            className="bg-[#4A72C0] hover:bg-[#3A62B0] text-white px-6 py-2 rounded-md flex items-center"
+            className="bg-amber-800 text-white px-6 py-2 rounded-md flex items-center"
           >
             Next
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

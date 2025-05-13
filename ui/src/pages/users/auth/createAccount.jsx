@@ -78,7 +78,7 @@ const NewUserForm = () => {
 
             <div className="p-6 rounded-lg  w-full max-w-sm text-center">
                 <Logo />
-                <h2 className="text-xl font-semibold mb-4 text-center">Create Account</h2>
+                <h2 className="text-xl font-semibold mb-4 text-center">Create an <span className="text-amber-900">OUAF</span> Account</h2>
                 <form onSubmit={handleSubmit} className="space-y-8 text-left min-h-[70vh] relative">
                     <button className="px-2 py-1 bg-amber-900 text-white rounded-sm ml-auto absolute right-0 top-0 mt-[-15px]" onClick={(e) => {
                         e.preventDefault()
@@ -241,7 +241,7 @@ const NewUserForm = () => {
                             <button type="button" onClick={prevStep} className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer">Previous</button>
                         )}
                         {step < 4 && (
-                            <button type="button" onClick={nextStep} className="bg-black text-white px-4 py-2 rounded-md cursor-pointer">Next</button>
+                            <button type="button" onClick={nextStep} className="bg-black text-white px-4 py-2 bg-amber-800 rounded-md cursor-pointer">Next</button>
                         )}
                         {step === 4 && (
                             <button type="submit" className="bg-black text-white px-4 py-2 rounded-md cursor-pointer">Submit</button>

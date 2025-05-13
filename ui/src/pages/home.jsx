@@ -28,6 +28,7 @@ import { useNavigate } from "react-router-dom"
 
 const Home = () => {
   // State to track image loading errors
+  const [showModal, setShowModal] = useState(false)
   const [imageErrors, setImageErrors] = useState({
     hero: false,
     section1: false,
@@ -56,7 +57,25 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-
+      {showModal && 
+      <div id="myModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full relative">
+        <button onClick={() => setShowModal(false)} class="absolute top-3 right-3 text-gray-400 hover:text-black text-xl">&times;</button>
+        <h2 class="text-xl font-bold mb-2 text-gray-800">Support Us</h2>
+        <p class="text-sm text-gray-600 mb-4">Your support keeps us going. Here are our bank details:</p>
+        
+        <div class="bg-gray-100 p-4 rounded-lg text-sm space-y-2">
+          <div><span class="font-medium text-gray-700">Account Name:</span> Ogidi Union Advancement Forum</div>
+          <div><span class="font-medium text-gray-700">Bank Name:</span> United Bank for Africa</div>
+          <div><span class="font-medium text-gray-700">Account Number:</span> 1028021273</div>
+        </div>
+    
+        <button onClick={() => setShowModal(false)} class="mt-6 w-full px-4 py-2 bg-amber-600 text-white rounded-lg  transition">
+          I’ve Sent Support
+        </button>
+      </div>
+    </div>
+    }
       {/* Hero Section - Redesigned with black background and image on right */}
       <div className="bg-black text-white">
         <div className="container mx-auto px-4 py-16 md:py-24">
@@ -69,7 +88,7 @@ const Home = () => {
                 <button className="bg-black hover:bg-black px-6 py-3 rounded font-medium flex items-center gap-2 cursor-pointer" onClick={() => navigate("/new-user")}>
                   JOIN US <FaArrowRight size={16} />
                 </button>
-                <button className="border border-white hover:bg-white/10 px-6 py-3 rounded font-medium">
+                <button onClick={() => navigate("/about")} className="border border-white hover:bg-white/10 px-6 py-3 rounded font-medium">
                   LEARN MORE
                 </button>
               </div>
@@ -137,7 +156,7 @@ const Home = () => {
         </div>
         <div className="bg-[#FCD6D3] p-12 flex flex-col items-center justify-center text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-6">Take A Pledge</h2>
-          <button className="border border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded">
+          <button onClick={() => setShowModal(true)} className="border border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded">
             Support Us
           </button>
         </div>
@@ -187,7 +206,7 @@ const Home = () => {
 
             <div className="space-y-8">
               <div className="flex justify-end">
-                <button className="bg-black hover:bg-black text-white px-8 py-4 font-medium rounded">
+                <button className="bg-black hover:bg-black text-white px-8 py-4 font-medium rounded" onClick={() => navigate("/project")}>
                   SEE ALL PROJECTS
                 </button>
               </div>
@@ -212,7 +231,6 @@ const Home = () => {
                     <p className="text-gray-700 mt-2">
                       Smooth, durable roads with functional drainage systems are the backbone of any thriving community.
                       <a href="#" className="text-black font-medium ml-1 hover:underline">
-                        Read More
                       </a>
                     </p>
                   </div>
@@ -235,7 +253,6 @@ const Home = () => {
                     <p className="text-gray-700 mt-2">
                       Building a stronger community through collaborative development projects and local empowerment.
                       <a href="#" className="text-black font-medium ml-1 hover:underline">
-                        Read More
                       </a>
                     </p>
                   </div>
@@ -258,7 +275,6 @@ const Home = () => {
                     <p className="text-gray-700 mt-2">
                       Investing in the future of Ogidi through education, skills training, and mentorship for our youth.
                       <a href="#" className="text-black font-medium ml-1 hover:underline">
-                        Read More
                       </a>
                     </p>
                   </div>
