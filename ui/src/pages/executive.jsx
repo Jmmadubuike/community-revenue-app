@@ -1,82 +1,49 @@
-
-import { useState } from "react"
 import Navbar from "../components/navbar"
 import HeroImage from "../assets/igwe-in-cancel.jpg"
 import Footer from "../components/common/footer"
-// PaginationIndicator component included in the same file
-const PaginationIndicator = ({ totalPages, currentPage }) => {
-  return (
-    <div className="flex justify-center gap-2 my-6">
-      {Array.from({ length: totalPages }).map((_, index) => (
-        <div key={index} className={`h-2 w-2 rounded-full ${index === currentPage ? "bg-[#4A72C0]" : "bg-gray-300"}`} />
-      ))}
-    </div>
-  )
-}
 
 const ExecutivesPage = () => {
-  const [currentPage, setCurrentPage] = useState(0)
-
-  // Data for each page
-  const pages = [
+  // Data for all executive groups
+  const executiveGroups = [
     {
       title: "Executive Members of Ogidi Union Nigeria (OUN)",
       members: [
         { position: "President General", name: "Chief Hon. Ikwuka Okoye", phone: "08037414407" },
         { position: "Vice President General", name: "Chijioke Ewesiobi Okeke", phone: "08132794099" },
-        { position: "Secretary General", name: " Chukwuemeka C Muoemenam", phone: "08109199996" },
+        { position: "Secretary General", name: "Chukwuemeka C Muoemenam", phone: "08109199996" },
         { position: "Assistant Secretary General", name: "Chinwendu Frank Obiora", phone: "07061837868" },
         { position: "Financial Secretary", name: "Chief Chukwubunna Obor", phone: "08035448942" },
-        { position: "Treasurer", name: "Dr. Kenneth Obianagha", phone: " 08032770577" },
-        { position: "P.R.O.", name: " Ikechukwu Achebe", phone: "08063366350" },
+        { position: "Treasurer", name: "Dr. Kenneth Obianagha", phone: "08032770577" },
+        { position: "P.R.O.", name: "Ikechukwu Achebe", phone: "08063366350" },
         { position: "Chief Provost", name: "Elochukwu Osondu", phone: "08034274411" },
       ],
     },
     {
-      title: "Igwe-in-Council",
-      subtitle:
-        "NAMES OF CANDIDATES FOR INAUGURATION/SWEARING INTO THE RECONSTITUTED IGWE-IN-COUNCIL (MARCH 16 - 2024)",
-      sections: [
-        {
-          title: "AKANANO",
-          members: [
-            { position: "Chief", name: "Arinze Nweke (Ezeani)" },
-            { position: "Chief", name: "Augustine Ekwunife" },
-            { position: "Chief", name: "Obinna Umeh" },
-            { position: "Chief", name: "Uche Ifeagwazi" },
-            { position: "Chief", name: "Uzo Nwanna" },
-          ],
-        },
-        {
-          title: "URU",
-          members: [
-            { position: "Chief", name: "Chuka Onubogu" },
-            { position: "Chief", name: "Charles Anaekwe" },
-            { position: "Chief", name: "Ugochukwu Amene" },
-            { position: "Chief", name: "Kenneth Ikelie" },
-            { position: "Chief", name: "Nnamdi Umeh" },
-          ],
-        },
-        {
-          title: "EZINKWO",
-          members: [
-            { position: "Chief", name: "Emeka Eze" },
-            { position: "Chief", name: "John Nzelu" },
-            { position: "Chief", name: "Ike Nzelu" },
-            { position: "Chief", name: "Boniface Nzekwe" },
-            { position: "Chief", name: "Kola Oyeoka" },
-          ],
-        },
-        {
-          title: "IKENGA",
-          members: [
-            { position: "Chief Dr.", name: "Sam Agbata" },
-            { position: "Chief", name: "Emma Chimezie" },
-            { position: "Chief", name: "Livinus Atutu" },
-            { position: "Chief", name: "Uchenna Okonkwo" },
-            { position: "Chief", name: "Moses Umeagba" },
-          ],
-        },
+      title: "Igwe-in-Council Members",
+      subtitle: "List of Council Members with their Titles and Contact Information",
+      members: [
+        { no: 1, name: "Chief Nonso Uchegbu", title: "Chinyelugo", phone: "08037163142" },
+        { no: 2, name: "Chief Chike Maduagwuna", title: "Ugolue", phone: "08033904162" },
+        { no: 3, name: "Chief Nonye Osakwe", title: "Ozodinaobi", phone: "08035411000" },
+        { no: 4, name: "Chief Dr. Ikemefuna Ajemba", title: "Ebubechukwuzo", phone: "09030365873" },
+        { no: 5, name: "Chief Frank Mozie", title: "Ezenwammadu", phone: "08034102287" },
+        { no: 6, name: "Chief Tochukwu Chioke", title: "Ozueomee", phone: "08037985700" },
+        { no: 7, name: "Chief Emeka Echenona", title: "Arubaluezeama", phone: "07030209696" },
+        { no: 8, name: "Chief Chukwudi Ebele", title: "Ugochinyere", phone: "08033241077" },
+        { no: 9, name: "Chief Godwin Udeorah", title: "Egojiolu", phone: "08033838427" },
+        { no: 10, name: "Chief Dr. Uche Onyegbu", title: "Akulue - uno", phone: "08027654890" },
+        { no: 11, name: "Chief Uchenna Okonkwo", title: "Nnabuenyi", phone: "08037563417" },
+        { no: 12, name: "Chief Ikechukwu Okoye", title: "Nnanyelugo", phone: "08034296333" },
+        { no: 13, name: "Chief Emeka Arinze", title: "Akusinachi", phone: "08034102287" },
+        { no: 14, name: "Chief Onyebuchi Vincent", title: "Ezeogo", phone: "09030365873" },
+        { no: 15, name: "Chief Ndika Onyeka", title: "Nwakaibie", phone: "08036685346" },
+        { no: 16, name: "Chief Augustine Ifezueoke", title: "Ezenwata", phone: "08105128818" },
+        { no: 17, name: "Chief Ubaka Iloabachie", title: "Ojinnaka", phone: "08036685346" },
+        { no: 18, name: "Chief Kenneth Amobi", title: "Ezennia", phone: "08142245194" },
+        { no: 19, name: "Chief Obi Ibemesi", title: "Nwawelugo", phone: "08033401577" },
+        { no: 20, name: "Chief Ugoo Mbaekwe", title: "Ezenwata", phone: "08033356008" },
+        { no: 21, name: "Chief Vincent Obi", title: "Ezeudo", phone: "08035530145" },
+        { no: 22, name: "Chief/Engr. Okey Amobi", title: "Oba", phone: "08137227420" },
       ],
     },
     {
@@ -94,121 +61,81 @@ const ExecutivesPage = () => {
     },
   ]
 
-  const nextPage = () => {
-    setCurrentPage((prev) => (prev === pages.length - 1 ? 0 : prev + 1))
-  }
-
-  const prevPage = () => {
-    setCurrentPage((prev) => (prev === 0 ? pages.length - 1 : prev - 1))
-  }
-
-  const renderPageContent = () => {
-    const page = pages[currentPage]
-
-    if (currentPage === 0) {
-      return (
-        <div className="mt-11 md:px-16">
-          <h1 className="text-lg font-bold text-center text-slate-800">{page.title}</h1>
-          <p className="text-center mb-6">Below is the list of members of Ogidi Union Nigeria:</p>
-
-          <div className="space-y-3 max-w-3xl mx-auto">
-            {page.members.map((member, index) => (
-              <div key={index} className="bg-gray-200 px-6 py-4 rounded-md">
-                {member.position}, {member.name}, {member.phone}
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    } else if (currentPage === 1) {
-      return (
-        <div className="mt-11 md:px-16">
-          <h1 className="text-lg font-bold text-center text-slate-800">{page.title}</h1>
-          <p className="text-center mb-6 max-w-3xl mx-auto">{page.subtitle}</p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {page.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="space-y-3">
-                <h3 className="font-bold text-center">{section.title}</h3>
-                {section.members.map((member, memberIndex) => (
-                  <div key={memberIndex} className="bg-gray-200 px-4 py-3 rounded-md text-sm">
-                    {member.position} {member.name}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className="mt-11 md:px-16">
-          <h1 className="text-2xl font-bold text-center text-slate-800">{page.title}</h1>
-          <div className="space-y-3 max-w-3xl mx-auto mt-6">
-            {page.members.map((member, index) => (
-              <div key={index} className="bg-gray-200 px-6 py-4 rounded-md">
-                {member.position}: {member.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    }
-  }
-
   return (
     <div>
       <Navbar />
 
-      <div>
-        <div className="relative h-[80vh] bg-cover bg-center" style={{ backgroundImage: `url(${HeroImage})` }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
-          <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
-            <div className="flex flex-col items-center">
-              <h1 className="text-4xl md:text-6xl font-bold">{pages[currentPage].title}</h1>
-            </div>
+      {/* Hero Section */}
+      <div className="relative h-[50vh] bg-cover bg-center" style={{ backgroundImage: `url(${HeroImage})` }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
+        <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
+          <div className="flex flex-col items-center">
+            <h1 className="text-4xl md:text-6xl font-bold">Ogidi Leadership</h1>
+            <p className="mt-4 text-xl">Meet our distinguished executives and council members</p>
           </div>
         </div>
-
-        {renderPageContent()}
-
-        {/* Pagination indicator */}
-        <PaginationIndicator totalPages={pages.length} currentPage={currentPage} />
-
-        {/* Navigation buttons */}
-        <div className="flex justify-between max-w-3xl mx-auto my-12 px-6">
-          <button
-            onClick={prevPage}
-            className="bg-amber-800 text-white px-6 py-2 rounded-md flex items-center"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Previous
-          </button>
-          <button
-            onClick={nextPage}
-            className="bg-amber-800 text-white px-6 py-2 rounded-md flex items-center"
-          >
-            Next
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
       </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+        {executiveGroups.map((group, index) => (
+          <section key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6 bg-gray-100 border-b">
+              <h2 className="text-2xl font-bold text-gray-800">{group.title}</h2>
+              {group.subtitle && <p className="text-gray-600 mt-2">{group.subtitle}</p>}
+            </div>
+            
+            <div className="p-6">
+              {group.title.includes("Igwe-in-Council") ? (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone No.</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {group.members.map((member, idx) => (
+                        <tr key={idx} className="hover:bg-gray-50">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{member.no}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{member.name}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{member.title}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                            <a href={`tel:${member.phone}`}>{member.phone}</a>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-4">
+                  {group.members.map((member, idx) => (
+                    <div key={idx} className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-amber-600 transition-colors">
+                      <h3 className="font-bold text-lg text-gray-800">{member.position}</h3>
+                      <p className="text-gray-700">{member.name}</p>
+                      {member.phone && (
+                        <p className="mt-2">
+                          <a href={`tel:${member.phone}`} className="text-blue-600 hover:text-blue-800">
+                            {member.phone}
+                          </a>
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        ))}
+      </div>
+
       <Footer />
     </div>
   )
 }
 
 export default ExecutivesPage
-
