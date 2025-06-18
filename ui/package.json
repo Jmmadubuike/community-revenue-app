@@ -18,6 +18,7 @@
     "@tailwindcss/vite": "^4.0.4",
     "@zayne-labs/callapi": "^1.4.2",
     "antd": "^5.24.0",
+    "framer-motion": "^12.18.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.1",

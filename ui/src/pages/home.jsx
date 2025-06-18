@@ -22,9 +22,11 @@ import {
   FaRoad,
   FaUsers,
   FaGraduationCap,
+  FaTelegram,
 } from "react-icons/fa"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import SocialMediaSection from '../components/SocialMediaSection'
 
 const Home = () => {
   // State to track image loading errors
@@ -71,7 +73,7 @@ const Home = () => {
         </div>
     
         <button onClick={() => setShowModal(false)} class="mt-6 w-full px-4 py-2 bg-amber-600 text-white rounded-lg  transition">
-          I’ve Sent Support
+          I've Sent Support
         </button>
       </div>
     </div>
@@ -88,9 +90,15 @@ const Home = () => {
                 <button className="bg-black hover:bg-black px-6 py-3 rounded font-medium flex items-center gap-2 cursor-pointer" onClick={() => navigate("/new-user")}>
                   JOIN US <FaArrowRight size={16} />
                 </button>
-                <button onClick={() => navigate("/about")} className="border border-white hover:bg-white/10 px-6 py-3 rounded font-medium">
-                  LEARN MORE
-                </button>
+               
+                <a 
+                  href="https://t.me/+wi8QHygF-29mYzE0" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-amber-500 hover:bg-blue-600 px-6 py-3  font-medium flex items-center gap-2"
+                >
+                  <FaTelegram size={16} /> SEE ANNOUNCEMENTS
+                </a>
               </div>
             </div>
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
@@ -331,6 +339,9 @@ const Home = () => {
 
       {/* Get Started Section */}
       <GetStarted />
+
+      {/* Social Media Section */}
+      <SocialMediaSection />
 
       {/* Footer */}
       <Footer />
