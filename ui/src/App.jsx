@@ -23,6 +23,7 @@ const ContactPage = React.lazy(()=> import("./pages/contact"))
 const GallaryPage = React.lazy(()=> import("./pages/gallary"))
 const ExecutivePage = React.lazy(()=> import("./pages/executive"))
 const PresidentGeneralsPage = React.lazy(() => import("./pages/president-generals"))
+const PastLeadersPage = React.lazy(() => import("./pages/past-leaders"))
 
 
 
@@ -63,6 +64,7 @@ function App() {
         <Route path="/gallary" element={<GallaryPage />} />
         <Route path="/executive" element={<ExecutivePage />} />
         <Route path="/president-generals" element={<PresidentGeneralsPage />} />
+        <Route path="/past-leaders" element={<PastLeadersPage />} />
 
 
 

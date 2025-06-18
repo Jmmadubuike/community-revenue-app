@@ -1,3 +1,4 @@
+import { FaYoutube, FaFacebook, FaTelegram } from 'react-icons/fa';
 import  Logo  from "./logo" // Importing the Logo component you already have
 
 const Footer = () => {
@@ -53,30 +54,34 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="md:w-1/4 hidden">
+        <div className="md:w-1/4 ">
           <h3 className="font-semibold text-gray-700 mb-4">Connect With Us</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="text-sm text-gray-600">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm text-gray-600">
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm text-gray-600">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm text-gray-600">
-                LinkedIn
-              </a>
-            </li>
-          </ul>
+          <div className="flex space-x-4">
+            <a 
+              href="https://youtube.com/@ogidiuaf?si=m0Pt7k7DTo6sPweL" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-red-500 transition-colors duration-300"
+            >
+              <FaYoutube />
+            </a>
+            <a 
+              href="https://www.facebook.com/profile.php?id=61575106822817&mibextid=ZbWKwL" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-blue-500 transition-colors duration-300"
+            >
+              <FaFacebook />
+            </a>
+            <a 
+              href="https://t.me/+wi8QHygF-29mYzE0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-blue-400 transition-colors duration-300"
+            >
+              <FaTelegram />
+            </a>
+          </div>
         </div>
       </div>
 

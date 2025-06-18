@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Logo from "./common/logo";
 import { useNavigate } from "react-router-dom";
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaProjectDiagram, FaUserTie, FaEnvelope, FaImages, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaProjectDiagram, FaUserTie, FaEnvelope, FaImages, FaSignInAlt, FaUserPlus, FaHistory } from "react-icons/fa";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,7 @@ const Navbar = () => {
                     <a href="/about" className="flex items-center hover:text-amber-600 hover:scale-105">About</a>
                     <a href="/project" className="flex items-center hover:text-amber-600 hover:scale-105">Projects</a>
                     <a href="/executive" className="flex items-center hover:text-amber-600 hover:scale-105">Executive</a>
+                    <a href="/past-leaders" className="flex items-center hover:text-amber-600 hover:scale-105">Past Leaders</a>
                     <a href="/contact" className="flex items-center hover:text-amber-600 hover:scale-105">Contact Us</a>
                     <a href="/gallary" className="flex items-center hover:text-amber-600 hover:scale-105">Gallery</a>
                 </div>
@@ -48,6 +49,7 @@ const Navbar = () => {
                         <a href="/about" className="flex items-center hover:text-amber-600"> About</a>
                         <a href="/project" className="flex items-center hover:text-amber-600"> Projects</a>
                         <a href="/executive" className="flex items-center hover:text-amber-600">Executive</a>
+                        <a href="/past-leaders" className="flex items-center hover:text-amber-600">Past Leaders</a>
                         <a href="/contact" className="flex items-center hover:text-amber-600"> Contact Us</a>
                         <a href="/gallary" className="flex items-center hover:text-amber-600">Gallery</a>
                         <a className="cursor-pointer bg-transparent text-black px-4 py-2 border-black border-2 flex items-center" href="/user/login">

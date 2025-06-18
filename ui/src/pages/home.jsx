@@ -25,6 +25,7 @@ import {
 } from "react-icons/fa"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import SocialMediaSection from '../components/SocialMediaSection'
 
 const Home = () => {
   // State to track image loading errors
@@ -71,7 +72,7 @@ const Home = () => {
         </div>
     
         <button onClick={() => setShowModal(false)} class="mt-6 w-full px-4 py-2 bg-amber-600 text-white rounded-lg  transition">
-          I’ve Sent Support
+          I've Sent Support
         </button>
       </div>
     </div>
@@ -331,6 +332,9 @@ const Home = () => {
 
       {/* Get Started Section */}
       <GetStarted />
+
+      {/* Social Media Section */}
+      <SocialMediaSection />
 
       {/* Footer */}
       <Footer />
