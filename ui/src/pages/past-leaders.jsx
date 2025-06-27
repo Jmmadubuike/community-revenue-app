@@ -22,6 +22,12 @@ import Image18 from "../assets/past-leaders/Image18.png"
 import Image19 from "../assets/past-leaders/Image19.png"
 import Image20 from "../assets/past-leaders/Image20.png"
 import Image21 from "../assets/past-leaders/Image21.png"
+import Image22 from "../assets/past-leaders/Image22.jpg"
+import Image23 from "../assets/past-leaders/Image23.jpg"
+import Image24 from "../assets/past-leaders/Image24.jpg"
+
+
+
 import { image } from "@cloudinary/url-gen/qualifiers/source"
 
 // Animation variants
@@ -129,10 +135,21 @@ const pastPGs = [
         image:Image14
     },
     {
-        name:"Cheif Barr. Obi Muanya",
-        period:"2004-2007",
-        image:Image13
+        name:"Cheif Obinna Ekpechi",
+        period:"2007-2010",
+        image:Image24
+    },
+    {
+        name:"Dr Cheif Eric Onyeka Obiakor",
+        period:"2010-2015",
+        image:Image22
+    },
+    {
+        name:"High Cheif Chuka Jideofor Onubogu (Ifeneti Ogidi",
+        period:"2015-2023",
+        image:Image23
     }
+
 
     
 ];
