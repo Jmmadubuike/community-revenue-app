@@ -20,6 +20,8 @@ import Ochendu from "../assets/members/ochendu.jpg"
 import ObaEgo from "../assets/members/ObaEgo.jpg"
 import Okafor from "../assets/members/okafor.jpg"
 import Anthony from "../assets/members/anthony.jpg"
+import AdaSam from "../assets/ada_sam.jpg"
+import StellaMmaduka from "../assets/stella_maduka.jpg"
 
 // Define the type for executive members
 type ExecutiveMember = {
@@ -175,6 +177,20 @@ const executiveMembers: ExecutiveMember[] = [
     image: Ngozi,
   },
   {
+    name: "Mrs. Ada Sam Omenyi",
+    title: "Prof. ",
+    position: "Women Leader",
+    image: AdaSam,
+    location:""
+  },
+  {
+    name: "Stella Maduka",
+    title: "Mrs",
+    position: "Vice Women Leader",
+    image: StellaMmaduka,
+    location:""
+  },
+  {
     name: "Obiora Ndika  (Nnanyelugo)",
     title: "Chief",
     position: "Member",
@@ -195,6 +211,9 @@ const executiveMembers: ExecutiveMember[] = [
     location: "Umueri",
     image: Anthony,
   },
+  
+
+  
 ]
 
 const ExecutiveMembers = () => {

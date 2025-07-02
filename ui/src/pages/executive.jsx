@@ -1,141 +1,200 @@
-import Navbar from "../components/navbar"
-import HeroImage from "../assets/igwe-in-cancel.jpg"
-import Footer from "../components/common/footer"
+import Navbar from "../components/navbar";
+import Footer from "../components/common/footer";
+import { useState } from "react";
+import { FaUserTie, FaUserFriends, FaUser, FaChevronDown, FaChevronUp, FaPhoneAlt } from "react-icons/fa";
+
+const executiveData = [
+  {
+    group: "Ndi Ichie Ogidi (Main Executive)",
+    // icon: <FaUserTie className="text-3xl text-amber-700" />,
+    members: [
+      { name: "Chief Benedict Meka", position: "President", phone: "07035071973" },
+      { name: "Chief Linus Udokwu", position: "Vice President", phone: "08068632666" },
+      { name: "Chief Chris Okeke", position: "Secretary", phone: "08033467264" },
+      { name: "Chief Abua Twonye", position: "Assistant Secretary", phone: "08033481275" },
+      { name: "Chief Osita Ekpunobi", position: "Financial Secretary", phone: "08034922137" },
+      { name: "Chief Gabriel Obidike", position: "Treasurer", phone: "08062900492" },
+      { name: "Chief Peter Onekamma", position: "Public Relations Officer", phone: "08037861619" },
+      { name: "Chief Leonard Mbamalu", position: "Provost", phone: "08068481112" },
+    ],
+  },
+  {
+    group: "Women’s Wing Executive (Main)",
+    // icon: <FaUserFriends className="text-3xl text-pink-600" />,
+    members: [
+      { name: "Prof. Mrs. Ada Sam Omenyi", position: "Women Leader", phone: "08037723476" },
+      { name: "Mrs. Stella Maduka", position: "Vice Women Leader", phone: "08036272725" },
+      { name: "Lay Reader Philomena Okongwu", position: "Secretary", phone: "08060890538" },
+      { name: "Dr. Ebele Ubah", position: "", phone: "08032933638" },
+      { name: "Mrs. Mary Rose Okeke Ozoude", position: "", phone: "09060069063" },
+      { name: "Mrs. Ogechukwu Ndefo", position: "", phone: "08035452639" },
+      { name: "Mrs. Ngozi Amamchukwu", position: "", phone: "08063325129" },
+      { name: "Mrs. Ebele Ogbogu", position: "", phone: "08037522767" },
+      { name: "Mrs. Ngozi Agusiobi", position: "", phone: "08039162611" },
+      { name: "Mrs. Chinwendu Egwim", position: "", phone: "08138436563" },
+      { name: "Mrs. Eucharia Mmadukife", position: "", phone: "07031005596" },
+      { name: "Mrs. Okwukwu Agbakoba", position: "", phone: "08063684846" },
+      { name: "Mrs. Ngozi Ndiche", position: "", phone: "08133947761" },
+      { name: "Mrs. Ogoo Okocha", position: "", phone: "08032687838" },
+      { name: "Mrs. Joy Okafor", position: "", phone: "08037438112" },
+      { name: "Mrs. Ngozi Enedo", position: "", phone: "08145752767" },
+    ],
+    subgroups: [
+      {
+        name: "Ezinkwo Women’s Wing",
+        members: [
+          { name: "Mrs. Joy Okafor", position: "Chairlady", phone: "08037438112" },
+          { name: "Mrs. Josephine Aratoke", position: "Vice Chairlady", phone: "07045275605" },
+          { name: "Mrs. Theresa Udemezue", position: "Secretary", phone: "08034674144" },
+          { name: "Mrs. Anayo Okeke", position: "Ass Secretary", phone: "09165299212" },
+          { name: "Mrs. Eunice OsegbO", position: "Fin Secretary", phone: "08064643725" },
+          { name: "Mrs. Comfort Udemezue", position: "Treasure", phone: "07032866956" },
+          { name: "Chidiebele Okoye", position: "Provost", phone: "08066898429" },
+        ],
+      },
+      {
+        name: "Ikenga Quarter Women’s Wing",
+        members: [
+          { name: "Enedo Ngozi", position: "Chairlady", phone: "08045752767" },
+          { name: "Chiebonam Ifedi", position: "Vice Chairlady", phone: "08021286016" },
+          { name: "Ekene Okanmelu", position: "Secretary", phone: "09133760245" },
+          { name: "Obiageli Mmaduako", position: "Ass Secretary", phone: "09019934256" },
+          { name: "Adaora Onexanma", position: "Fin Secretary", phone: "09033521181" },
+        ],
+      },
+      {
+        name: "Aka – Na –Ano Women’s Wing",
+        members: [
+          { name: "Mrs. Ngozi Ndichie", position: "", phone: "08133947761" },
+          { name: "Mrs. Mercy Ilukwe", position: "", phone: "07062463084" },
+          { name: "Mrs. Apollonia Ifediora", position: "", phone: "07068556299" },
+          { name: "Mrs. Joy Chukwuemerie", position: "", phone: "07032932166" },
+          { name: "Mrs. Obiageli Chukwunulu", position: "", phone: "08034334774" },
+          { name: "Mrs. Ebele Okoye", position: "", phone: "08037759324" },
+          { name: "Mrs. Chinenye Ezepe", position: "", phone: "08108926479" },
+        ],
+      },
+      {
+        name: "Uru Quarter Women’s Wing",
+        members: [
+          { name: "Mrs. Ogoo Okocha", position: "President", phone: "09014869829" },
+          { name: "Mrs. Obiechina", position: "V.P.", phone: "07034967066" },
+          { name: "Ogochukwu Ubanwosu", position: "Fin Sec", phone: "08068460718" },
+          { name: "Mrs. Metu", position: "Ass Fin Sec", phone: "08067838896" },
+          { name: "Clementina Unobuagha", position: "Secretary", phone: "08055094494" },
+          { name: "Oluchukwu Ikezue", position: "Assist Secretary", phone: "" },
+          { name: "Ngozi Ezikel", position: "TreasuER", phone: "08137667966" },
+          { name: "Ifeyinwa Amobi", position: "PRO", phone: "07066843911" },
+        ],
+      },
+    ],
+  },
+  {
+    group: "Youth Executives (Main)",
+    // icon: <FaUser className="text-3xl text-green-600" />,
+    members: [
+      { name: "Hon. Chris Obi Okafor", position: "President", phone: "", quarter: "Ezinkwo" },
+      { name: "Arc. Chika Ezepue", position: "Vice President", phone: "", quarter: "Akanano" },
+      { name: "Engr. Ideli Chukwubuka", position: "Secretary", phone: "", quarter: "Ikenga" },
+      { name: "Mr. Charles Obiekwe", position: "Assistant Secretary", phone: "", quarter: "Ezinkwo" },
+      { name: "Mr. Ikechukwu Okonkwo", position: "Financial Secretary", phone: "", quarter: "Akanano" },
+      { name: "Mr. Udeorah Sopulu", position: "Treasurer", phone: "", quarter: "Uru" },
+      { name: "Mr. Chukwudi Obianyo", position: "PRO", phone: "", quarter: "Ikenga" },
+      { name: "Mr. Ikechukwu Okaro", position: "Provost", phone: "", quarter: "Uru" },
+    ],
+    subgroups: [
+      {
+        name: "Quarter Youth Chairmen",
+        members: [
+          { name: "Mr. Ikechukwu Okonkwo", position: "Chairman", phone: "", quarter: "Akanano quarter" },
+          { name: "Mr. Udeorah Sopulu", position: "Chairman", phone: "", quarter: "Uru quarter" },
+          { name: "Mr. Ibernesi Chukwuka", position: "Chairman", phone: "", quarter: "Ezinkwo quarter" },
+          { name: "Mr. Chukwudi Obianyo", position: "Chairman", phone: "", quarter: "Ikenga quarter" },
+        ],
+      },
+    ],
+  },
+];
+
+function CollapsibleSection({ title, icon, children, defaultOpen = true }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <section className="bg-white rounded-lg -md overflow-hidden mb-6">
+      <button
+        className="w-full flex items-center justify-between p-6 bg-gray-100  focus:outline-none hover:bg-amber-50 transition-colors"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        <span className="flex items-center gap-3 text-2xl font-bold text-gray-800">
+          {icon}
+          {title}
+        </span>
+        {open ? <FaChevronUp /> : <FaChevronDown />}
+      </button>
+      {open && <div className="p-6">{children}</div>}
+    </section>
+  );
+}
+
+function MemberCard({ name, position, phone, quarter }) {
+  return (
+    <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-amber-600 transition-colors -sm">
+      <FaUserTie className="text-2xl text-amber-700 flex-shrink-0" />
+      <div className="flex-1">
+        <h3 className="font-bold text-lg text-gray-800">{name}</h3>
+        {position && <p className="text-gray-700">{position}</p>}
+        {quarter && <p className="text-gray-500 text-sm">{quarter}</p>}
+        {phone && (
+          <p className="mt-2 flex items-center gap-2">
+            <FaPhoneAlt className="text-blue-500" />
+            <a href={`tel:${phone}`} className="text-blue-600 hover:text-blue-800 underline">{phone}</a>
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const ExecutivesPage = () => {
-  // Data for all executive groups
-  const executiveGroups = [
-    {
-      title: "Executive Members of Ogidi Union Nigeria (OUN)",
-      members: [
-        { position: "President General", name: "Chief Hon. Ikwuka Okoye", phone: "08037414407" },
-        { position: "Vice President General", name: "Chijioke Ewesiobi Okeke", phone: "08132794099" },
-        { position: "Secretary General", name: "Chukwuemeka C Muoemenam", phone: "08109199996" },
-        { position: "Assistant Secretary General", name: "Chinwendu Frank Obiora", phone: "07061837868" },
-        { position: "Financial Secretary", name: "Chief Chukwubunna Obor", phone: "08035448942" },
-        { position: "Treasurer", name: "Dr. Kenneth Obianagha", phone: "08032770577" },
-        { position: "P.R.O.", name: "Ikechukwu Achebe", phone: "08063366350" },
-        { position: "Chief Provost", name: "Elochukwu Osondu", phone: "08034274411" },
-      ],
-    },
-    {
-      title: "Igwe-in-Council Members",
-      subtitle: "List of Council Members with their Titles and Contact Information",
-      members: [
-        { no: 1, name: "Chief Nonso Uchegbu", title: "Chinyelugo", phone: "08037163142" },
-        { no: 2, name: "Chief Chike Maduagwuna", title: "Ugolue", phone: "08033904162" },
-        { no: 3, name: "Chief Nonye Osakwe", title: "Ozodinaobi", phone: "08035411000" },
-        { no: 4, name: "Chief Dr. Ikemefuna Ajemba", title: "Ebubechukwuzo", phone: "09030365873" },
-        { no: 5, name: "Chief Frank Mozie", title: "Ezenwammadu", phone: "08034102287" },
-        { no: 6, name: "Chief Tochukwu Chioke", title: "Ozueomee", phone: "08037985700" },
-        { no: 7, name: "Chief Emeka Echenona", title: "Arubaluezeama", phone: "07030209696" },
-        { no: 8, name: "Chief Chukwudi Ebele", title: "Ugochinyere", phone: "08033241077" },
-        { no: 9, name: "Chief Godwin Udeorah", title: "Egojiolu", phone: "08033838427" },
-        { no: 10, name: "Chief Dr. Uche Onyegbu", title: "Akulue - uno", phone: "08027654890" },
-        { no: 11, name: "Chief Uchenna Okonkwo", title: "Nnabuenyi", phone: "08037563417" },
-        { no: 12, name: "Chief Ikechukwu Okoye", title: "Nnanyelugo", phone: "08034296333" },
-        { no: 13, name: "Chief Emeka Arinze", title: "Akusinachi", phone: "08034102287" },
-        { no: 14, name: "Chief Onyebuchi Vincent", title: "Ezeogo", phone: "09030365873" },
-        { no: 15, name: "Chief Ndika Onyeka", title: "Nwakaibie", phone: "08036685346" },
-        { no: 16, name: "Chief Augustine Ifezueoke", title: "Ezenwata", phone: "08105128818" },
-        { no: 17, name: "Chief Ubaka Iloabachie", title: "Ojinnaka", phone: "08036685346" },
-        { no: 18, name: "Chief Kenneth Amobi", title: "Ezennia", phone: "08142245194" },
-        { no: 19, name: "Chief Obi Ibemesi", title: "Nwawelugo", phone: "08033401577" },
-        { no: 20, name: "Chief Ugoo Mbaekwe", title: "Ezenwata", phone: "08033356008" },
-        { no: 21, name: "Chief Vincent Obi", title: "Ezeudo", phone: "08035530145" },
-        { no: 22, name: "Chief/Engr. Okey Amobi", title: "Oba", phone: "08137227420" },
-      ],
-    },
-    {
-      title: "Ndichie Ogidi Executives",
-      members: [
-        { position: "President", name: "Chief Benedict Udeze" },
-        { position: "Vice-president", name: "Chief Louis Mbamalu" },
-        { position: "Secretary", name: "Chief Chris Okeke" },
-        { position: "Assistant Secretary", name: "Chief Uche Nwoye" },
-        { position: "Financial Secretary", name: "Chief Uche Anyaorah" },
-        { position: "Treasurer", name: "Chief Gabriel Okeke" },
-        { position: "P.R.O.", name: "Chief Ogbu Nwankwo" },
-        { position: "Provost", name: "Chief Leonard Ndubuisi" },
-      ],
-    },
-  ]
-
   return (
     <div>
       <Navbar />
-
       {/* Hero Section */}
-      <div className="relative h-[50vh] bg-cover bg-center" style={{ backgroundImage: `url(${HeroImage})` }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#4A72C033] to-black via-silver"></div>
-        <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
-          <div className="flex flex-col items-center">
-            <h1 className="text-4xl md:text-6xl font-bold">Ogidi Leadership</h1>
-            <p className="mt-4 text-xl">Meet our distinguished executives and council members</p>
-          </div>
+      <div className="relative h-[40vh] bg-gradient-to-br from-amber-100 to-amber-300 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-amber-900 drop-">Ogidi Leadership</h1>
+          <p className="mt-4 text-xl text-amber-800">Meet our distinguished executives and council members</p>
         </div>
       </div>
-
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
-        {executiveGroups.map((group, index) => (
-          <section key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6 bg-gray-100 border-b">
-              <h2 className="text-2xl font-bold text-gray-800">{group.title}</h2>
-              {group.subtitle && <p className="text-gray-600 mt-2">{group.subtitle}</p>}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {executiveData.map((group, idx) => (
+          <CollapsibleSection key={idx} title={group.group} icon={group.icon} defaultOpen={true}>
+            <div className="grid md:grid-cols-2 gap-4">
+              {group.members.map((member, i) => (
+                <MemberCard key={i} {...member} />
+              ))}
             </div>
-            
-            <div className="p-6">
-              {group.title.includes("Igwe-in-Council") ? (
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone No.</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {group.members.map((member, idx) => (
-                        <tr key={idx} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{member.no}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{member.name}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{member.title}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                            <a href={`tel:${member.phone}`}>{member.phone}</a>
-                          </td>
-                        </tr>
+            {group.subgroups && (
+              <div className="mt-8 space-y-6">
+                {group.subgroups.map((sub, j) => (
+                  <div key={j}>
+                    <h4 className="text-lg font-semibold text-amber-700 mb-2">{sub.name}</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {sub.members.map((member, k) => (
+                        <MemberCard key={k} {...member} />
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-4">
-                  {group.members.map((member, idx) => (
-                    <div key={idx} className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-amber-600 transition-colors">
-                      <h3 className="font-bold text-lg text-gray-800">{member.position}</h3>
-                      <p className="text-gray-700">{member.name}</p>
-                      {member.phone && (
-                        <p className="mt-2">
-                          <a href={`tel:${member.phone}`} className="text-blue-600 hover:text-blue-800">
-                            {member.phone}
-                          </a>
-                        </p>
-                      )}
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </section>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CollapsibleSection>
         ))}
       </div>
-
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default ExecutivesPage
+export default ExecutivesPage;
