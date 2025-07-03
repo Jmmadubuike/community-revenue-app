@@ -203,7 +203,7 @@ const ExecutivesPage = () => {
       <div className="relative h-[40vh] bg-gradient-to-br from-amber-100 to-amber-300 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-amber-900 drop-">Ogidi Leadership</h1>
-          <p className="mt-4 text-xl text-amber-800">Meet our distinguished executives and council members</p>
+          <p className="mt-4 text-xl text-amber-800">Meet our distinguished Executives and Council Members</p>
         </div>
       </div>
       {/* Main Content */}
