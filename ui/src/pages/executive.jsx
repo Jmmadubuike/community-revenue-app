@@ -9,7 +9,7 @@ const executiveData = [
     members: [
       { name: "Chief Hon. Ikwuka Okoye", position: "President General", phone: "08037414407" },
       { name: "Chijioke Ewesiobi Okeke", position: "Vice President General", phone: "08132794099" },
-      { name: "Chukwuemeka C Muoemenam", position: "Secretary General", phone: "08109199996" },
+      { name: "Chukwuemeka C. Muoemenam", position: "Secretary General", phone: "08109199996" },
       { name: "Chinwendu Frank Obiora", position: "Assistant Secretary General", phone: "07061837868" },
       { name: "Chief Chukwubunna Obor", position: "Financial Secretary", phone: "08035448942" },
       { name: "Dr. Kenneth Obianagha", position: "Treasurer", phone: "08032770577" },
