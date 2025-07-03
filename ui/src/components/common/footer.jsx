@@ -35,7 +35,7 @@ const Footer = () => {
 
             <li>
               <a href="/gallary" className="text-sm ">
-                Gallary
+                Gallery
               </a>
             </li>
 

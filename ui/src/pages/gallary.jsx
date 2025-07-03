@@ -58,6 +58,9 @@ import Women3 from "../assets/women-wing/IMG-20250703-WA0031.jpg";
 import Women4 from "../assets/women-wing/IMG-20250703-WA0032.jpg";
 import Women5 from "../assets/women-wing/IMG-20250703-WA0033.jpg";
 import Women6 from "../assets/women-wing/IMG-20250703-WA0034.jpg";
+import AdaSam from "../assets/ada_sam.jpg"
+import StellaMmaduka from "../assets/stella_maduka.jpg"
+import EbeleOgbogu from "../assets/Ebele_Ogbogu.jpg"
 // Framer Motion
 import { motion } from "framer-motion";
 
@@ -92,7 +95,7 @@ const galleryImages = [
   { src: Gallary27, caption: "New Event Photo 12" },
   { src: Gallary28, caption: "New Event Photo 13" },
   { src: Gallary29, caption: "New Event Photo 14" },
-  { src: Gallary30, caption: "New Event Photo 15" },
+  // { src: Gallary30, caption: "New Event Photo 15" },
   { src: Gallary31, caption: "New Event Photo 16" },
   { src: Gallary32, caption: "New Event Photo 17" },
   { src: Gallary33, caption: "New Event Photo 18" },
@@ -114,8 +117,19 @@ const womenWingImages = [
   { src: Women2, caption: "Women Wing Event 2" },
   { src: Women3, caption: "Women Wing Event 3" },
   { src: Women4, caption: "Women Wing Event 4" },
+  {
+    caption: "Prof. Ada Omenyi (Women Leader)",
+    src: AdaSam,
+  },
+  {
+   
+    caption: "Mrs. Stella Maduka (Vice Women Leader)",
+    src: StellaMmaduka,
+  
+  },
   { src: Women5, caption: "Women Wing Event 5" },
-  { src: Women6, caption: "Women Wing Event 6" },
+    { src: Women6, caption: "Women Wing Event 6" },
+  
 ];
 
 const GallaryPage = () => {
