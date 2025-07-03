@@ -198,9 +198,9 @@ const PastLeadersPage = () => {
                         variants={fadeInUp}
                         className="text-center mb-12"
                     >
-                        <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="flex  justify-center gap-3 mb-4 items-center">
                             <FaCrown className="text-3xl text-amber-600" />
-                            <h2 className="text-3xl font-bold text-amber-900">Past Igwes</h2>
+                            <h2 className="text-3xl font-bold text-amber-900 mt-3">Past Igwes</h2>
                         </div>
                         <p className="text-xl text-amber-800">The Royal Legacy of Ogidi Kingdom</p>
                     </motion.div>
