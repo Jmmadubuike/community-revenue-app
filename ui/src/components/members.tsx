@@ -22,7 +22,7 @@ import Okafor from "../assets/members/okafor.jpg"
 import Anthony from "../assets/members/anthony.jpg"
 import AdaSam from "../assets/ada_sam.jpg"
 import StellaMmaduka from "../assets/stella_maduka.jpg"
-
+import EbeleOgbogu from "../assets/Ebele_Ogbogu.jpg"
 // Define the type for executive members
 type ExecutiveMember = {
   name: string
@@ -188,6 +188,13 @@ const executiveMembers: ExecutiveMember[] = [
     title: "Mrs",
     position: "Vice Women Leader",
     image: StellaMmaduka,
+    location:""
+  },
+  {
+    name: "Ebele Ogbogu",
+    title: "Mrs",
+    position: "P.R.0",
+    image: EbeleOgbogu,
     location:""
   },
   {

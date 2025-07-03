@@ -7,6 +7,8 @@ import Gallary2 from "../assets/gallary2.jpg";
 import Gallary3 from "../assets/gallary3.jpg";
 import Gallary4 from "../assets/gallary4.jpg";
 import Gallary5 from "../assets/gallary1.jpg";
+import Gallary0 from "../assets/gallary0.jpg";
+
 import Footer from "../components/common/footer";
 // Dummy additional images
 import Gallary6 from "../assets/gallary6.jpg";
@@ -49,6 +51,13 @@ import Gallary40 from "../assets/gallary40.jpg";
 import Gallary41 from "../assets/gallary41.jpg";
 import Gallary42 from "../assets/gallary42.jpg";
 import Gallary43 from "../assets/gallary43.jpg";
+// Women Wing images
+import Women1 from "../assets/women-wing/IMG-20250703-WA0029.jpg";
+import Women2 from "../assets/women-wing/IMG-20250703-WA0030.jpg";
+import Women3 from "../assets/women-wing/IMG-20250703-WA0031.jpg";
+import Women4 from "../assets/women-wing/IMG-20250703-WA0032.jpg";
+import Women5 from "../assets/women-wing/IMG-20250703-WA0033.jpg";
+import Women6 from "../assets/women-wing/IMG-20250703-WA0034.jpg";
 // Framer Motion
 import { motion } from "framer-motion";
 
@@ -98,6 +107,15 @@ const galleryImages = [
   { src: Gallary41, caption: "New Event Photo 26" },
   { src: Gallary42, caption: "New Event Photo 27" },
   { src: Gallary43, caption: "New Event Photo 28" },
+];
+
+const womenWingImages = [
+  { src: Women1, caption: "Women Wing Event 1" },
+  { src: Women2, caption: "Women Wing Event 2" },
+  { src: Women3, caption: "Women Wing Event 3" },
+  { src: Women4, caption: "Women Wing Event 4" },
+  { src: Women5, caption: "Women Wing Event 5" },
+  { src: Women6, caption: "Women Wing Event 6" },
 ];
 
 const GallaryPage = () => {
@@ -153,14 +171,37 @@ const GallaryPage = () => {
         {/* Video Banner Highlight */}
         <div className="mt-10 rounded-lg overflow-hidden relative">
           <img
-            src={Gallary5}
+            src={Gallary0}
             alt="Cultural video"
-            className="w-full h-64 object-cover"
+            className="w-full auto object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black bg-opacity-60 rounded-full p-4 cursor-pointer hover:bg-opacity-80 transition">
-              <FaPlay className="w-6 h-6 text-white" />
-            </div>
+          </div>
+        </div>
+
+        {/* Women Wing Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-pink-700 mb-6 text-center">Women Wing Gallery</h2>
+          <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+            {womenWingImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="break-inside-avoid rounded-lg overflow-hidden mb-4"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.07 }}
+              >
+                <img
+                  src={image.src}
+                  alt={`Women Wing image ${index + 1}`}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-pink-900 text-white text-sm p-2 bg-opacity-70">
+                  {image.caption}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
