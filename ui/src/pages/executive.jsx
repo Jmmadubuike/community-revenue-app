@@ -5,7 +5,47 @@ import { FaUserTie, FaUserFriends, FaUser, FaChevronDown, FaChevronUp, FaPhoneAl
 
 const executiveData = [
   {
-    group: "Ndi Ichie Ogidi (Main Executive)",
+    group: "Executive Members of Ogidi Union Nigeria (OUN)",
+    members: [
+      { name: "Chief Hon. Ikwuka Okoye", position: "President General", phone: "08037414407" },
+      { name: "Chijioke Ewesiobi Okeke", position: "Vice President General", phone: "08132794099" },
+      { name: "Chukwuemeka C Muoemenam", position: "Secretary General", phone: "08109199996" },
+      { name: "Chinwendu Frank Obiora", position: "Assistant Secretary General", phone: "07061837868" },
+      { name: "Chief Chukwubunna Obor", position: "Financial Secretary", phone: "08035448942" },
+      { name: "Dr. Kenneth Obianagha", position: "Treasurer", phone: "08032770577" },
+      { name: "Ikechukwu Achebe", position: "P.R.O.", phone: "08063366350" },
+      { name: "Elochukwu Osondu", position: "Chief Provost", phone: "08034274411" },
+    ],
+  },
+  {
+    group: "Igwe-in-Council Members",
+    members: [
+      { name: "Chief Nonso Uchegbu", position: "Chinyelugo", phone: "08037163142" },
+      { name: "Chief Chike Maduagwuna", position: "Ugolue", phone: "08033904162" },
+      { name: "Chief Nonye Osakwe", position: "Ozodinaobi", phone: "08035411000" },
+      { name: "Chief Dr. Ikemefuna Ajemba", position: "Ebubechukwuzo", phone: "09030365873" },
+      { name: "Chief Frank Mozie", position: "Ezenwammadu", phone: "08034102287" },
+      { name: "Chief Tochukwu Chioke", position: "Ozueomee", phone: "08037985700" },
+      { name: "Chief Emeka Echenona", position: "Arubaluezeama", phone: "07030209696" },
+      { name: "Chief Chukwudi Ebele", position: "Ugochinyere", phone: "08033241077" },
+      { name: "Chief Godwin Udeorah", position: "Egojiolu", phone: "08033838427" },
+      { name: "Chief Dr. Uche Onyegbu", position: "Akulue - uno", phone: "08027654890" },
+      { name: "Chief Uchenna Okonkwo", position: "Nnabuenyi", phone: "08037563417" },
+      { name: "Chief Ikechukwu Okoye", position: "Nnanyelugo", phone: "08034296333" },
+      { name: "Chief Emeka Arinze", position: "Akusinachi", phone: "08034102287" },
+      { name: "Chief Onyebuchi Vincent", position: "Ezeogo", phone: "09030365873" },
+      { name: "Chief Ndika Onyeka", position: "Nwakaibie", phone: "08036685346" },
+      { name: "Chief Augustine Ifezueoke", position: "Ezenwata", phone: "08105128818" },
+      { name: "Chief Ubaka Iloabachie", position: "Ojinnaka", phone: "08036685346" },
+      { name: "Chief Kenneth Amobi", position: "Ezennia", phone: "08142245194" },
+      { name: "Chief Obi Ibemesi", position: "Nwawelugo", phone: "08033401577" },
+      { name: "Chief Ugoo Mbaekwe", position: "Ezenwata", phone: "08033356008" },
+      { name: "Chief Vincent Obi", position: "Ezeudo", phone: "08035530145" },
+      { name: "Chief/Engr. Okey Amobi", position: "Oba", phone: "08137227420" },
+    ],
+  },
+  {
+    group: "Ndi Ichie Ogidi",
     // icon: <FaUserTie className="text-3xl text-amber-700" />,
     members: [
       { name: "Chief Benedict Meka", position: "President", phone: "07035071973" },
@@ -19,7 +59,7 @@ const executiveData = [
     ],
   },
   {
-    group: "Women’s Wing Executive",
+    group: "Women's Wing Executive",
     // icon: <FaUserFriends className="text-3xl text-pink-600" />,
     members: [
       { name: "Prof. Mrs. Ada Sam Omenyi", position: "Women Leader", phone: "08037723476" },
@@ -41,7 +81,7 @@ const executiveData = [
     ],
     subgroups: [
       {
-        name: "Ezinkwo Women’s Wing",
+        name: "Ezinkwo Women's Wing",
         members: [
           { name: "Mrs. Joy Okafor", position: "Chairlady", phone: "08037438112" },
           { name: "Mrs. Josephine Aratoke", position: "Vice Chairlady", phone: "07045275605" },
@@ -53,7 +93,7 @@ const executiveData = [
         ],
       },
       {
-        name: "Ikenga Quarter Women’s Wing",
+        name: "Ikenga Quarter Women's Wing",
         members: [
           { name: "Enedo Ngozi", position: "Chairlady", phone: "08045752767" },
           { name: "Chiebonam Ifedi", position: "Vice Chairlady", phone: "08021286016" },
@@ -63,7 +103,7 @@ const executiveData = [
         ],
       },
       {
-        name: "Aka – Na –Ano Women’s Wing",
+        name: "Aka – Na –Ano Women's Wing",
         members: [
           { name: "Mrs. Ngozi Ndichie", position: "", phone: "08133947761" },
           { name: "Mrs. Mercy Ilukwe", position: "", phone: "07062463084" },
@@ -75,7 +115,7 @@ const executiveData = [
         ],
       },
       {
-        name: "Uru Quarter Women’s Wing",
+        name: "Uru Quarter Women's Wing",
         members: [
           { name: "Mrs. Ogoo Okocha", position: "President", phone: "09014869829" },
           { name: "Mrs. Obiechina", position: "V.P.", phone: "07034967066" },
