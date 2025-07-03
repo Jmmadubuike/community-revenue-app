@@ -247,7 +247,7 @@ const PastLeadersPage = () => {
                             <FaUserTie className="text-3xl text-gray-700" />
                             <h2 className="text-3xl font-bold text-gray-900">Past President-Generals</h2>
                         </div>
-                        <p className="text-xl text-gray-700">The Leadership Legacy of Ogidi Union</p>
+                        <p className="text-xl text-gray-700">The Leadership Legacy of Ogidi Union Nigeria</p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
