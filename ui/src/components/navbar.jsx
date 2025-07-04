@@ -18,7 +18,7 @@ const Navbar = () => {
                     <a href="/" className="flex items-center hover:text-amber-600 hover:scale-105">Home</a>
                     <a href="/about" className="flex items-center hover:text-amber-600 hover:scale-105">About</a>
                     <a href="/project" className="flex items-center hover:text-amber-600 hover:scale-105">Projects</a>
-                    <a href="/executive" className="flex items-center hover:text-amber-600 hover:scale-105">Executive</a>
+                    <a href="/executive" className="flex items-center hover:text-amber-600 hover:scale-105">Executives</a>
                     <a href="/past-leaders" className="flex items-center hover:text-amber-600 hover:scale-105">Past Leaders</a>
                     <a href="/contact" className="flex items-center hover:text-amber-600 hover:scale-105">Contact Us</a>
                     <a href="/gallary" className="flex items-center hover:text-amber-600 hover:scale-105">Gallery</a>
@@ -48,7 +48,7 @@ const Navbar = () => {
                         <a href="/" className="flex items-center hover:text-amber-600 "> Home</a>
                         <a href="/about" className="flex items-center hover:text-amber-600"> About</a>
                         <a href="/project" className="flex items-center hover:text-amber-600"> Projects</a>
-                        <a href="/executive" className="flex items-center hover:text-amber-600">Executive</a>
+                        <a href="/executive" className="flex items-center hover:text-amber-600">Executives</a>
                         <a href="/past-leaders" className="flex items-center hover:text-amber-600">Past Leaders</a>
                         <a href="/contact" className="flex items-center hover:text-amber-600"> Contact Us</a>
                         <a href="/gallary" className="flex items-center hover:text-amber-600">Gallery</a>

@@ -174,6 +174,7 @@ const executiveMembers: ExecutiveMember[] = [
     location: "",
     image: Ngozi,
   },
+  
   {
     name: "Obiora Ndika  (Nnanyelugo)",
     title: "Chief",
@@ -195,6 +196,9 @@ const executiveMembers: ExecutiveMember[] = [
     location: "Umueri",
     image: Anthony,
   },
+  
+
+  
 ]
 
 const ExecutiveMembers = () => {

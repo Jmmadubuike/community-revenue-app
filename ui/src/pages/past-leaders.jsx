@@ -198,9 +198,9 @@ const PastLeadersPage = () => {
                         variants={fadeInUp}
                         className="text-center mb-12"
                     >
-                        <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="flex  justify-center gap-3 mb-4 items-center">
                             <FaCrown className="text-3xl text-amber-600" />
-                            <h2 className="text-3xl font-bold text-amber-900">Past Igwes</h2>
+                            <h2 className="text-3xl font-bold text-amber-900 mt-3">Past Igwes</h2>
                         </div>
                         <p className="text-xl text-amber-800">The Royal Legacy of Ogidi Kingdom</p>
                     </motion.div>
@@ -247,7 +247,7 @@ const PastLeadersPage = () => {
                             <FaUserTie className="text-3xl text-gray-700" />
                             <h2 className="text-3xl font-bold text-gray-900">Past President-Generals</h2>
                         </div>
-                        <p className="text-xl text-gray-700">The Leadership Legacy of Ogidi Union</p>
+                        <p className="text-xl text-gray-700">The Leadership Legacy of Ogidi Union Nigeria</p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
